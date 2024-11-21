@@ -347,52 +347,64 @@
             <%
 
                 if (rs.getString(57).isEmpty() && rs.getString(69).isEmpty()) {
-                    
-                } else {out.print("<tr><td>" + rs.getString(57) + " " + rs.getString(69) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(57) + " " + rs.getString(69) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(58).isEmpty() && rs.getString(70).isEmpty()) {
-                   
-                } else { out.print("<tr><td>" + rs.getString(58) + " " + rs.getString(70) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(58) + " " + rs.getString(70) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(59).isEmpty() && rs.getString(71).isEmpty()) {
-                    
-                } else {out.print("<tr><td>" + rs.getString(59) + " " + rs.getString(71) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(59) + " " + rs.getString(71) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(60).isEmpty() && rs.getString(72).isEmpty()) {
-                    
-                } else {out.print("<tr><td>" + rs.getString(60) + " " + rs.getString(72) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(60) + " " + rs.getString(72) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(61).isEmpty() && rs.getString(73).isEmpty()) {
-                    
-                } else {out.print("<tr><td>" + rs.getString(61) + " " + rs.getString(73) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(61) + " " + rs.getString(73) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(62).isEmpty() && rs.getString(74).isEmpty()) {
-                   
-                } else { out.print("<tr><td>" + rs.getString(62) + " " + rs.getString(74) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(62) + " " + rs.getString(74) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(63).isEmpty() && rs.getString(75).isEmpty()) {
-                   
-                } else { out.print("<tr><td>" + rs.getString(63) + " " + rs.getString(75) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(63) + " " + rs.getString(75) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(64).isEmpty() && rs.getString(76).isEmpty()) {
-                    
-                } else {out.print("<tr><td>" + rs.getString(64) + " " + rs.getString(76) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(64) + " " + rs.getString(76) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(65).isEmpty() && rs.getString(77).isEmpty()) {
-                   
-                } else { out.print("<tr><td>" + rs.getString(65) + " " + rs.getString(77) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(65) + " " + rs.getString(77) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(66).isEmpty() && rs.getString(78).isEmpty()) {
-                    
-                } else {out.print("<tr><td>" + rs.getString(66) + " " + rs.getString(78) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(66) + " " + rs.getString(78) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(67).isEmpty() && rs.getString(79).isEmpty()) {
-                   
-                } else { out.print("<tr><td>" + rs.getString(67) + " " + rs.getString(79) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(67) + " " + rs.getString(79) + "</td><td>_______________________________</td></tr>");
                 };
                 if (rs.getString(68).isEmpty() && rs.getString(80).isEmpty()) {
-                  
-                } else {  out.print("<tr><td>" + rs.getString(68) + " " + rs.getString(80) + "</td><td>_______________________________</td></tr>");
+
+                } else {
+                    out.print("<tr><td>" + rs.getString(68) + " " + rs.getString(80) + "</td><td>_______________________________</td></tr>");
                 };
             %>
         </table>
@@ -440,7 +452,7 @@
             </tr>
         </table>
         <%}
-ps.close();
+                ps.close();
                 connection.close();
                 //out.print("deu certo");
             } catch (Exception e) {

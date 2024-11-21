@@ -133,14 +133,15 @@ CREATE TABLE `Apr_reg` (
 
 =============== TABELA PET======================
 
--- parbd.PT_reg definition
+-- parbd.pt_reg definition
 
-CREATE TABLE `PT_reg` (
+CREATE TABLE `pt_reg` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pt_departamento` text DEFAULT NULL,
   `pt_equip_local` text DEFAULT NULL,
   `data_abertura_pt` date DEFAULT NULL,
   `hora_abertura_pt` time DEFAULT NULL,
+  `pt_desc_servico` varchar(100) DEFAULT NULL,
   `areas_afetadas` text DEFAULT NULL,
   `riscos_identificados_apr` text DEFAULT NULL,
   `feito_loto` text DEFAULT NULL,
