@@ -19,6 +19,8 @@
             String departamento = request.getParameter("pt-departamento");
 
             String equipamentoLocal = request.getParameter("pt-equip-local");
+            
+            String descricaoAtividade = request.getParameter("descricao-atividade-pt");
 
             String dataAbertura = request.getParameter("data-abertura-pt");
 
@@ -275,284 +277,139 @@
                 PreparedStatement ps;
                 Connection connection;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parbd", "root",
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3305/parbd", "root",
                         "");
-                ps = connection.prepareStatement("INSERT INTO parbd.PT_reg ("
-                        + "pt_departamento, "
-                        + "pt_equip_local, "
-                        + "data_abertura_pt, "
-                        + "hora_abertura_pt, "
-                        + "areas_afetadas, "
-                        + "riscos_identificados_apr, "
-                        + "feito_loto, "
-                        + "chuveiros_emergencia, "
-                        + "ferramentas_manuais, "
-                        + "area_limpa, "
-                        + "epis_na_apr, "
-                        + "outros_doc_naoplica, "
-                        + "outros_doc_pet, "
-                        + "outros_doc_icamento, "
-                        + "ac_exrc_aut, "
-                        + "ac_atmosfera_explosiva, "
-                        + "ac_sistema_limpo, "
-                        + "ac_monit_gases, "
-                        + "ac_hid_ext, "
-                        + "eletric_ferr_isol, "
-                        + "eletric_aterrado, "
-                        + "eletric_caso_incend, "
-                        + "eletric_ext_facil, "
-                        + "ser_quent_presenca_brig, "
-                        + "ser_quent_vent, "
-                        + "ser_quent_conj_oxi, "
-                        + "ser_quent_band_prot, "
-                        + "ser_quent_sist_comb, "
-                        + "ser_quent_esmer_lix, "
-                        + "ser_quent_maq_solda, "
-                        + "ser_quent_mang_fios, "
-                        + "ser_quent_nome_brigadista, "
-                        + "ta_hier_prot, "
-                        + "ta_ponto_anc_n_proj, "
-                        + "ta_ponto_proj, "
-                        + "ta_todos_equip, "
-                        + "ta_verif_100, "
-                        + "ta_andaime, "
-                        + "ta_pessoa_contato, "
-                        + "ta_exec_uso_epi, "
-                        + "ta_efeito_pendulo, "
-                        + "ta_aferir_pressao, "
-                        + "tpq_kit_vaz, "
-                        + "tpq_tanq_desp, "
-                        + "tpq_chuv_hid, "
-                        + "tpq_mang_engate, "
-                        + "tpq_carreta_travada, "
-                        + "tpq_mot_equip, "
-                        + "ted_eng_ins, "
-                        + "ted_riscos_sub, "
-                        + "ted_evit_desmo, "
-                        + "ted_aval_pet, "
-                        + "ted_dist_bate, "
-                        + "ted_ilum_suf, "
-                        + "ted_escor_parede, "
-                        + "ted_trans_int, "
-                        + "th_col_ori_risco, "
-                        + "th_esp_conf, "
-                        + "tale_analisado_riscos, "
-                        + "tale_met_descont, "
-                        + "tale_bloqueio_dupl, "
-                        + "tale_serv_linha_perig, "
-                        + "tmic_tabela_equip, "
-                        + "tmic_check_list_ins, "
-                        + "tmic_isolada_sinaliza, "
-                        + "tmic_cond_climat, "
-                        + "tmic_olhais_pontos, "
-                        + "tmic_guind_patolado, "
-                        + "tmic_raio_lanca, "
-                        + "epi_mascara_filtro, "
-                        + "epi_mascara_solda, "
-                        + "epi_respirador_aut, "
-                        + "epi_protetor_facial, "
-                        + "epi_bota_pvc, "
-                        + "epi_avental, "
-                        + "epi_luva_raspa, "
-                        + "epi_luva_pvc_borracha, "
-                        + "epi_luva_termica, "
-                        + "epi_luva_cobertura, "
-                        + "epi_luva_vaqueta, "
-                        + "epi_luva_couro, "
-                        + "epi_luva_baixa_volt, "
-                        + "epi_luva_alta_volt, "
-                        + "epi_mangas_isol, "
-                        + "epi_balaclava, "
-                        + "epi_vestimenta_2, "
-                        + "epi_vest_risco_4, "
-                        + "epi_cinto_duplo, "
-                        + "epi_botina_s_biq, "
-                        + "epi_conj_imperm, "
-                        + "epi_oculos_ampla, "
-                        + "epi_corda_nylon, "
-                        + "epi_outros, "
-                        + "resp_area_setor, "
-                        + "resp_execucao, "
-                        + "resp_emissao, "
-                        + "pt_nome_1, "
-                        + "pt_empresa_1, "
-                        + "pt_pa_1, "
-                        + "pt_nome_2, "
-                        + "pt_empresa_2, "
-                        + "pt_pa_2, "
-                        + "pt_nome_3, "
-                        + "pt_empresa_3, "
-                        + "pt_pa_3, "
-                        + "pt_nome_4, "
-                        + "pt_empresa_4, "
-                        + "pt_pa_4, "
-                        + "pt_nome_5, "
-                        + "pt_empresa_5, "
-                        + "pt_pa_5, "
-                        + "pt_nome_6, "
-                        + "pt_empresa_6, "
-                        + "pt_pa_6, "
-                        + "pt_nome_7, "
-                        + "pt_empresa_7, "
-                        + "pt_pa_7, "
-                        + "pt_nome_8, "
-                        + "pt_empresa_8, "
-                        + "pt_pa_8) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+                ps = connection.prepareStatement("INSERT INTO parbd.pt_reg (pt_departamento, pt_equip_local, data_abertura_pt, hora_abertura_pt, pt_desc_servico, areas_afetadas, riscos_identificados_apr, feito_loto, chuveiros_emergencia, ferramentas_manuais, area_limpa, epis_na_apr, outros_doc_naoplica, outros_doc_pet, outros_doc_icamento, ac_exrc_aut, ac_atmosfera_explosiva, ac_sistema_limpo, ac_monit_gases, ac_hid_ext, eletric_ferr_isol, eletric_aterrado, eletric_caso_incend, eletric_ext_facil, ser_quent_presenca_brig, ser_quent_vent, ser_quent_conj_oxi, ser_quent_band_prot, ser_quent_sist_comb, ser_quent_esmer_lix, ser_quent_maq_solda, ser_quent_nome_brigadista, ser_quent_mang_fios, ta_hier_prot, ta_ponto_anc_n_proj, ta_ponto_proj, ta_todos_equip, ta_verif_100, ta_andaime, ta_pessoa_contato, ta_exec_uso_epi, ta_efeito_pendulo, ta_aferir_pressao, tpq_kit_vaz, tpq_tanq_desp, tpq_chuv_hid, tpq_mang_engate, tpq_carreta_travada, tpq_mot_equip, ted_eng_ins, ted_riscos_sub, ted_evit_desmo, ted_aval_pet, ted_dist_bate, ted_ilum_suf, ted_escor_parede, ted_trans_int, th_col_ori_risco, th_esp_conf, tale_analisado_riscos, tale_met_descont, tale_bloqueio_dupl, tale_serv_linha_perig, tmic_tabela_equip, tmic_check_list_ins, tmic_isolada_sinaliza, tmic_cond_climat, tmic_olhais_pontos, tmic_guind_patolado, tmic_raio_lanca, epi_mascara_filtro, epi_mascara_solda, epi_respirador_aut, epi_protetor_facial, epi_bota_pvc, epi_avental, epi_luva_raspa, epi_luva_pvc_borracha, epi_luva_termica, epi_luva_cobertura, epi_luva_vaqueta, epi_luva_couro, epi_luva_baixa_volt, epi_luva_alta_volt, epi_mangas_isol, epi_balaclava, epi_vestimenta_2, epi_vest_risco_4, epi_cinto_duplo, epi_botina_s_biq, epi_conj_imperm, epi_oculos_ampla, epi_corda_nylon, epi_outros, resp_area_setor, resp_execucao, resp_emissao, pt_nome_1, pt_empresa_1, pt_pa_1, pt_nome_2, pt_empresa_2, pt_pa_2, pt_nome_3, pt_empresa_3, pt_pa_3, pt_nome_4, pt_empresa_4, pt_pa_4, pt_nome_5, pt_empresa_5, pt_pa_5, pt_nome_6, pt_empresa_6, pt_pa_6, pt_nome_7, pt_empresa_7, pt_pa_7, pt_nome_8, pt_empresa_8, pt_pa_8) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
                 ps.setString(1, departamento);
                 ps.setString(2, equipamentoLocal);
                 ps.setString(3, dataAbertura);
                 ps.setString(4, horaAbertura);
-
-// Seção de baixo Risco
-                ps.setString(5, areasAfetadas);
-                ps.setString(6, riscosIdentificadosApr);
-                ps.setString(7, feitoLoto);
-                ps.setString(8, chuveirosEmergencia);
-                ps.setString(9, ferramentasManuais);
-                ps.setString(10, areaLimpa);
-                ps.setString(11, episNaApr);
-                ps.setString(12, outDocNAplica);
-                ps.setString(13, outDocPET);
-                ps.setString(14, outDocIcam);
-
-// Seção de alto Risco
-                ps.setString(15, acExecAut);
-                ps.setString(16, acAtmosferaExplosiva);
-                ps.setString(17, acSistemaLimpo);
-                ps.setString(18, acMonitGases);
-                ps.setString(19, acHidExt);
-
-// Trabalho com eletricidade
-                ps.setString(20, eletricFerrIsol);
-                ps.setString(21, eletricAterrado);
-                ps.setString(22, eletricCasoIncend);
-                ps.setString(23, eletricExtFacil);
-
-// Serviço a quente
-                ps.setString(24, serQuentPresencaBrig);
-                ps.setString(25, serQuentVent);
-                ps.setString(26, serQuentConjOxi);
-                ps.setString(27, serQuentBandProt);
-                ps.setString(28, serQuentSistComb);
-                ps.setString(29, serQuentEsmerLix);
-                ps.setString(30, serQuentMaqSolda);
-                ps.setString(31, serQuentMangFios);
-                ps.setString(32, serQuentNomeBrigadista);
-
-// Trabalho em Altura
-                ps.setString(33, taHierProt);
-                ps.setString(34, taPontoAncNProj);
-                ps.setString(35, taPontoProj);
-                ps.setString(36, taTodosEquip);
-                ps.setString(37, taVerif100);
-                ps.setString(38, taAndaime);
-                ps.setString(39, taPessoaContato);
-                ps.setString(40, taExecUsoEpi);
-                ps.setString(41, taEfeitoPendulo);
-                ps.setString(42, taAferirPressao);
-
-// Trabalho com produtos químicos
-                ps.setString(43, tpqKitVaz);
-                ps.setString(44, tpqTanqDesp);
-                ps.setString(45, tpqChuvHid);
-                ps.setString(46, tpqMangEngate);
-                ps.setString(47, tpqCarretaTravada);
-                ps.setString(48, tpqMotEquip);
-
-// Trabalho com escavação e demolição
-                ps.setString(49, tedEngInsp);
-                ps.setString(50, tedRiscosSub);
-                ps.setString(51, tedEvitDesmo);
-                ps.setString(52, tedAvalPet);
-                ps.setString(53, tedDistBate);
-                ps.setString(54, tedIlumSuf);
-                ps.setString(55, tedEscorParede);
-                ps.setString(56, tedTransInt);
-
-// Trabalho com Hidrojateamento
-                ps.setString(57, thColOriRisco);
-                ps.setString(58, thEspConf);
-
-// Trabalho com Abertura de Linhas / Equipamentos
-                ps.setString(59, taleAnalisadoRiscos);
-                ps.setString(60, taleMetDescont);
-                ps.setString(61, taleBloqueioDupl);
-                ps.setString(62, taleServLinhaPerig);
-
-// Trabalho com Movimentação / Içamento de Cargas
-                ps.setString(63, tmicTabelaEquip);
-                ps.setString(64, tmicCheckListInsp);
-                ps.setString(65, tmicIsoladaSinaliza);
-                ps.setString(66, tmicCondClimat);
-                ps.setString(67, tmicOlhaisPontos);
-                ps.setString(68, tmicGuindPatolado);
-                ps.setString(69, tmicRaioLanca);
-
-// Equipamentos de Proteção Individual
-                ps.setString(70, epiMascaraFiltro);
-                ps.setString(71, epiMascaraSolda);
-                ps.setString(72, epiRespiradorAut);
-                ps.setString(73, epiProtetorFacial);
-                ps.setString(74, epiBotaPVC);
-                ps.setString(75, epiAvental);
-                ps.setString(76, epiLuvaRaspa);
-                ps.setString(77, epiLuvaPVCBorracha);
-                ps.setString(78, epiLuvaTermica);
-                ps.setString(79, epiLuvaCobertura);
-                ps.setString(80, epiLuvaVaqueta);
-                ps.setString(81, epiLuvaCouro);
-                ps.setString(82, epiLuvaBaixaVolt);
-                ps.setString(83, epiLuvaAltaVolt);
-                ps.setString(84, epiMangasIsol);
-                ps.setString(85, epiBalaclava);
-                ps.setString(86, epiVestimenta2);
-                ps.setString(87, epiVestRisco4);
-                ps.setString(88, epiCintoDuplo);
-                ps.setString(89, epiBotinaSBiq);
-                ps.setString(90, epiConjImperm);
-                ps.setString(91, epiOculosAmpla);
-                ps.setString(92, epiCordaNylon);
-                ps.setString(93, epiOutros);
-
-// Declaração de inspeção
-                ps.setString(94, respAreaSetor);
-                ps.setString(95, respExecucao);
-                ps.setString(96, respEmissao);
-
-// Participantes
-                ps.setString(97, ptNome1);
-                ps.setString(98, ptEmpresa1);
-                ps.setString(99, ptPa1);
-                ps.setString(100, ptNome2);
-                ps.setString(101, ptEmpresa2);
-                ps.setString(102, ptPa2);
-                ps.setString(103, ptNome3);
-                ps.setString(104, ptEmpresa3);
-                ps.setString(105, ptPa3);
-                ps.setString(106, ptNome4);
-                ps.setString(107, ptEmpresa4);
-                ps.setString(108, ptPa4);
-                ps.setString(109, ptNome5);
-                ps.setString(110, ptEmpresa5);
-                ps.setString(111, ptPa5);
-                ps.setString(112, ptNome6);
-                ps.setString(113, ptEmpresa6);
-                ps.setString(114, ptPa6);
-                ps.setString(115, ptNome7);
-                ps.setString(116, ptEmpresa7);
-                ps.setString(117, ptPa7);
-                ps.setString(118, ptNome8);
-                ps.setString(119, ptEmpresa8);
-                ps.setString(120, ptPa8);
+                ps.setString(5, descricaoAtividade);
+                ps.setString(6, areasAfetadas);
+                ps.setString(7, riscosIdentificadosApr);
+                ps.setString(8, feitoLoto);
+                ps.setString(9, chuveirosEmergencia);
+                ps.setString(10, ferramentasManuais);
+                ps.setString(11, areaLimpa);
+                ps.setString(12, episNaApr);
+                ps.setString(13, outDocNAplica);
+                ps.setString(14, outDocPET);
+                ps.setString(15, outDocIcam);
+                ps.setString(16, acExecAut);
+                ps.setString(17, acAtmosferaExplosiva);
+                ps.setString(18, acSistemaLimpo);
+                ps.setString(19, acMonitGases);
+                ps.setString(20, acHidExt);
+                ps.setString(21, eletricFerrIsol);
+                ps.setString(22, eletricAterrado);
+                ps.setString(23, eletricCasoIncend);
+                ps.setString(24, eletricExtFacil);
+                ps.setString(25, serQuentPresencaBrig);
+                ps.setString(26, serQuentVent);
+                ps.setString(27, serQuentConjOxi);
+                ps.setString(28, serQuentBandProt);
+                ps.setString(29, serQuentSistComb);
+                ps.setString(30, serQuentEsmerLix);
+                ps.setString(31, serQuentMaqSolda);
+                ps.setString(32, serQuentMangFios);
+                ps.setString(33, serQuentNomeBrigadista);
+                ps.setString(34, taHierProt);
+                ps.setString(35, taPontoAncNProj);
+                ps.setString(36, taPontoProj);
+                ps.setString(37, taTodosEquip);
+                ps.setString(38, taVerif100);
+                ps.setString(39, taAndaime);
+                ps.setString(40, taPessoaContato);
+                ps.setString(41, taExecUsoEpi);
+                ps.setString(42, taEfeitoPendulo);
+                ps.setString(43, taAferirPressao);
+                ps.setString(44, tpqKitVaz);
+                ps.setString(45, tpqTanqDesp);
+                ps.setString(46, tpqChuvHid);
+                ps.setString(47, tpqMangEngate);
+                ps.setString(48, tpqCarretaTravada);
+                ps.setString(49, tpqMotEquip);
+                ps.setString(50, tedEngInsp);
+                ps.setString(51, tedRiscosSub);
+                ps.setString(52, tedEvitDesmo);
+                ps.setString(53, tedAvalPet);
+                ps.setString(54, tedDistBate);
+                ps.setString(55, tedIlumSuf);
+                ps.setString(56, tedEscorParede);
+                ps.setString(57, tedTransInt);
+                ps.setString(58, thColOriRisco);
+                ps.setString(59, thEspConf);
+                ps.setString(60, taleAnalisadoRiscos);
+                ps.setString(61, taleMetDescont);
+                ps.setString(62, taleBloqueioDupl);
+                ps.setString(63, taleServLinhaPerig);
+                ps.setString(64, tmicTabelaEquip);
+                ps.setString(65, tmicCheckListInsp);
+                ps.setString(66, tmicIsoladaSinaliza);
+                ps.setString(67, tmicCondClimat);
+                ps.setString(68, tmicOlhaisPontos);
+                ps.setString(69, tmicGuindPatolado);
+                ps.setString(70, tmicRaioLanca);
+                ps.setString(71, epiMascaraFiltro);
+                ps.setString(72, epiMascaraSolda);
+                ps.setString(73, epiRespiradorAut);
+                ps.setString(74, epiProtetorFacial);
+                ps.setString(75, epiBotaPVC);
+                ps.setString(76, epiAvental);
+                ps.setString(77, epiLuvaRaspa);
+                ps.setString(78, epiLuvaPVCBorracha);
+                ps.setString(79, epiLuvaTermica);
+                ps.setString(80, epiLuvaCobertura);
+                ps.setString(81, epiLuvaVaqueta);
+                ps.setString(82, epiLuvaCouro);
+                ps.setString(83, epiLuvaBaixaVolt);
+                ps.setString(84, epiLuvaAltaVolt);
+                ps.setString(85, epiMangasIsol);
+                ps.setString(86, epiBalaclava);
+                ps.setString(87, epiVestimenta2);
+                ps.setString(88, epiVestRisco4);
+                ps.setString(89, epiCintoDuplo);
+                ps.setString(90, epiBotinaSBiq);
+                ps.setString(91, epiConjImperm);
+                ps.setString(92, epiOculosAmpla);
+                ps.setString(93, epiCordaNylon);
+                ps.setString(94, epiOutros);
+                ps.setString(95, respAreaSetor);
+                ps.setString(96, respExecucao);
+                ps.setString(97, respEmissao);
+                ps.setString(98, ptNome1);
+                ps.setString(99, ptEmpresa1);
+                ps.setString(100, ptPa1);
+                ps.setString(101, ptNome2);
+                ps.setString(102, ptEmpresa2);
+                ps.setString(103, ptPa2);
+                ps.setString(104, ptNome3);
+                ps.setString(105, ptEmpresa3);
+                ps.setString(106, ptPa3);
+                ps.setString(107, ptNome4);
+                ps.setString(108, ptEmpresa4);
+                ps.setString(109, ptPa4);
+                ps.setString(110, ptNome5);
+                ps.setString(111, ptEmpresa5);
+                ps.setString(112, ptPa5);
+                ps.setString(113, ptNome6);
+                ps.setString(114, ptEmpresa6);
+                ps.setString(115, ptPa6);
+                ps.setString(116, ptNome7);
+                ps.setString(117, ptEmpresa7);
+                ps.setString(118, ptPa7);
+                ps.setString(119, ptNome8);
+                ps.setString(120, ptEmpresa8);
+                ps.setString(121, ptPa8);
 
                 ps.executeUpdate();
                 
-                ps.close;
+                ps.close();
                 connection.close();
                 out.print("Registros incluidos com sucesso!");
             } catch (Exception e) {
-
+                e.printStackTrace();
                 out.print("Deu Erro Aqui: " + e);
             }
         %>
