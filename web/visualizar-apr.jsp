@@ -63,13 +63,13 @@
                             Class.forName("com.mysql.cj.jdbc.Driver");
                             connection = DriverManager.getConnection("jdbc:mysql://localhost:3305/parbd", "root",
                                     "");
-                            ps = connection.prepareStatement("select id, pt_desc_servico, data_abertura_pt from pt_reg pr;");
+                            ps = connection.prepareStatement("select id, pt_desc_servico, data_abertura_pt from parbd.pt_reg;");
                             ResultSet rs = ps.executeQuery();
 
                             while (rs.next()) {
 
                     %>
-                    <option value="<%= rs.getString("")%>">APR nº: <%= rs.getString("")%> - <%= rs.getString("")%> </option>
+                    <option value="<%= rs.getString("id")%>">APR nº: <%= rs.getString("pt_desc_servico")%> - <%= rs.getString("data_abertura_pt")%> </option>
                     <%
 
                             }
