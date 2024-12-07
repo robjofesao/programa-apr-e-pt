@@ -17,7 +17,7 @@
             PreparedStatement ps;
             Connection connection;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3305/parbd", "root",
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parbd", "root",
                     "");
             ps = connection.prepareStatement("select * from apr_reg ar where cod_apr = ?;");
             ps.setString(1, request.getParameter("apr-buscada"));

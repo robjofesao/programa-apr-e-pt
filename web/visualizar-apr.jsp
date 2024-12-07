@@ -22,7 +22,7 @@
                             PreparedStatement ps;
                             Connection connection;
                             Class.forName("com.mysql.cj.jdbc.Driver");
-                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3305/parbd", "root",
+                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parbd", "root",
                                     "");
                             ps = connection.prepareStatement("SELECT cod_apr, descricao_atividade_apr, data_abertura_apr FROM parbd.Apr_reg; ");
                             ResultSet rs = ps.executeQuery();
@@ -61,7 +61,7 @@
                             PreparedStatement ps;
                             Connection connection;
                             Class.forName("com.mysql.cj.jdbc.Driver");
-                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3305/parbd", "root",
+                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parbd", "root",
                                     "");
                             ps = connection.prepareStatement("select id, pt_desc_servico, data_abertura_pt from parbd.pt_reg;");
                             ResultSet rs = ps.executeQuery();
@@ -69,7 +69,7 @@
                             while (rs.next()) {
 
                     %>
-                    <option value="<%= rs.getString("id") %>">PT nº: <%= rs.getString("pt_desc_servico") %> - <%= rs.getString("data_abertura_pt") %> </option>
+                    <option value="<%= rs.getString("id") %>">PT nº: <%= rs.getString("id") %> - <%= rs.getString("pt_desc_servico") %> - <% out.print(rs.getString("data_abertura_pt")); %> </option>
                     <%
 
                             }
@@ -100,7 +100,7 @@
                             PreparedStatement ps;
                             Connection connection;
                             Class.forName("com.mysql.cj.jdbc.Driver");
-                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3305/parbd", "root",
+                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parbd", "root",
                                     "");
                             ps = connection.prepareStatement("select id, desc_det_serv, data_abertura from parbd.pet_reg;");
                             ResultSet rs = ps.executeQuery();

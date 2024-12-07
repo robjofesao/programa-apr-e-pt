@@ -148,7 +148,7 @@
                 PreparedStatement ps;
                 Connection connection;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3305/parbd", "root",
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parbd", "root",
                         "");
                 ps = connection.prepareStatement("INSERT INTO parbd.PET_reg ("
                         + "pet_departamento, "
