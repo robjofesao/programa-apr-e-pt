@@ -122,15 +122,15 @@
         <td class="w3-border">
             <% if (rs.getString(14) == (null)) {
                 } else {
-                    out.print("Não aplicável");
+                    out.print("[Não aplicável] ");
                 }
                 if (rs.getString(15) == (null)) {
                 } else {
-                    out.print("PET - Espaço confinado");
+                    out.print("[PET - Espaço confinado] ");
                 }
                 if (rs.getString(16) == (null)) {
                 } else {
-                    out.print("Plano de içamento de cargas");
+                    out.print("[Plano de içamento de cargas] ");
                 }
 
             %>
@@ -291,29 +291,22 @@
                 + "</tr>"
                 + "<tr>"
                 + "        <td class=\"w3-border\">O sistema de combate incêndio (extintor, hidrantes, etc.) está"
-                + "            adequado ao tipo de serviço e disponível no local?</td>"
-                + "        <td class=\"w3-border\">"
-                + "           "
-                + "        </td>"
-                + "</tr>"
-                + "    <tr>"
-                + "        <td class=\"w3-border\">As pessoas estão protegidas contra a radiação com barreiras de"
+                + "            adequado ao tipo de serviço e disponível no local? As pessoas estão protegidas contra a radiação com barreiras de"
                 + "            proteção?</td>"
                 + "        <td class=\"w3-border\">"
-                + "            "
+                + rs.getString(30)
                 + "        </td>"
-                + "    </tr>"
                 + "    <tr>"
                 + "        <td class=\"w3-border\">É necessário uma ventilação/exaustão?</td>"
                 + "        <td class=\"w3-border\">"
-                + ""
+                + rs.getString(27)
                 + "</td>"
                 + "</tr>"
                 + "    <tr>"
                 + "        <td class=\"w3-border\">Foi verificado na esmerilhadeira/lixadeira as condições da coifa de"
                 + "            segurança, do rebolo, cabo de alimentação, disco adequado ao serviço?</td>"
                 + "        <td class=\"w3-border\">"
-                + ""
+                + rs.getString(31)
                 + "        </td>"
                 + ""
                 + "    </tr>   "
@@ -323,43 +316,29 @@
                 + "            ajuste de abraçadeiras das mangueiras, acendedor de fricção, cilindros na posição"
                 + "            vertical, mangueiras sem emendas, ausência de graxa e óleo nos equipamentos?</td>"
                 + "        <td class=\"w3-border\">"
-                + "            "
+                + rs.getString(28)
                 + "        </td>"
                 + "    </tr>"
                 + "    <tr>"
                 + "        <td class=\"w3-border\">Foi verificado na máquina de solda as condições do cabo de"
-                + "            alimentação?</td>"
+                + "            alimentação? A peça a ser soldada está ligada ao pólo de retorno (terra) da máquina  de solda?</td>"
                 + "        <td class=\"w3-border\">"
-                + ""
+                + rs.getString(32)
                 + "</td>"
                 + "</tr>"
                 + "    <tr>"
-                + "       <td class=\"w3-border\">A peça a ser soldada está ligada ao pólo de retorno (terra) da máquina"
-                + "            de solda?</td>"
-                + "        <td class=\"w3-border\">"
-                + "           "
-                + "        </td>"
-                + "    </tr>"
-                + "    <tr>"
                 + "        <td class=\"w3-border\">Bandejas de cabos elétricos, tubulações de fibra de vidro e painéis"
-                + "            estão protegidos?</td>"
+                + "            estão protegidos? As aberturas em pisos, paredes, portas e drenos foram fechadas, cobertas ou protegidas?</td>"
                 + "        <td class=\"w3-border\">"
-                + "           "
+                + rs.getString(29)
                 + "        </td>"
-                + "    </tr>"
-                + "    <tr>"
-                + "        <td class=\"w3-border\">As aberturas em pisos, paredes, portas e drenos foram fechadas,"
-                + "cobertas ou protegidas?</td>"
-                + "        <td class=\"w3-border\">"
-                + ""
-                + "</td>"
                 + "    </tr>"
                 + "    <tr>"
                 + "        <td class=\"w3-border\">As mangueiras, extensões e fios elétricos estão protegidos contra"
                 + "tráfego de veículos e de pessoas, quedas de objetos, contato com água, superfícies"
                 + "aquecidas ou substâncias químicas?</td>"
                 + "        <td class=\"w3-border\">"
-                + ""
+                + rs.getString(34)
                 + "        </td>"
                 + "    </tr>"
                 + "</table>");
@@ -372,85 +351,99 @@
 
 <!-- serviço em altura -->
 <h2>TRABALHO EM ALTURA</h2>
-<table class="w3-table-all">
-    <tr>
-        <th class="w3-border">Item</th>
-        <th class="w3-border">Resposta</th>
+<%
+     if (rs.getString(35).isEmpty()
+            && rs.getString(36).isEmpty()
+            && rs.getString(37).isEmpty()
+            && rs.getString(38).isEmpty()
+            && rs.getString(39).isEmpty()
+            && rs.getString(40).isEmpty()
+            && rs.getString(41).isEmpty()
+            && rs.getString(42).isEmpty()
+            && rs.getString(43).isEmpty()
+            && rs.getString(44).isEmpty()) {
 
-    </tr>
-    <tr>
-        <td class="w3-border">Foi revista a hierarquia de proteção contra queda e selecionado o modo
-            mais seguro para o desempenho da atividade?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
+        out.print("<H4>   *  Não Aplicável</H4>");
 
-    </tr>
-    <tr>
-        <td class="w3-border">A pessoa de contato (vigilante de emergência) sabe o modo de
-            comunicação em caso de emergência?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
+    } else {
+    
+    out.print(""
+    + ""
+    + "<table class=\"w3-table-all\">"
+    + "    <tr>"
+    + "        <th class=\"w3-border\">Item</th>"
+    + "        <th class=\"w3-border\">Resposta</th>"
+    + "    "
+    + "</tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">Foi revista a hierarquia de proteção contra queda e selecionado o modo"
+    + "            mais seguro para o desempenho da atividade?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(35)
+    + "        </td>"
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">A pessoa de contato (vigilante de emergência) sabe o modo de"
+    + "            comunicação em caso de emergência?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(41)
+    + "        </td>"
+    + ""
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">Foi verificado a possibilidade de o usário estar 100% conectado ao"
+    + "            ponto de ancoragem e o mesmo foi roientado</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(39)
+    + "        </td>"
+    + ""
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">O ponto de ancoragem (não projetado) suportará 2.268kg?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(36)
+    + "        </td>"
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">O Executante está utilizando os EPI's necessários para trabalho em"
+    + "            altura?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(42)
+    + "        </td>"
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">O ponto de ancoragem (projetado) foi aprovado por um profissional"
+    + "            legalmente habilitado?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(37)
+    + "        </td>"
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">O sistema de retenção foi ajustado de modo a evitar que o executante tenha uma queda livre maior que 1,80m? Em caso de queda o talabarte/travaquedas foi instalado de modo que o "
+    + "            usuário não possa bater contra instalações/equipamentos abaixo ou dos lados (efeito"
+    + "            pêndulo)?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(43)
+    + "        </td>"
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">Todos os equipamentos usados na retenção de quedas foram inspecionados"
+    + "            conforme plano de inspeção e estão aprovados?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(38)
+    + "        </td>"
+    + "    </tr>"
+    + "    <tr>"
+    + "        <td class=\"w3-border\">O executante possui treinamento de 8 horas conforme descrito na NR-35 e apto"
+    + "            clinicamente para executar a atividade (aferir a pressão arterial)?</td>"
+    + "        <td class=\"w3-border\">"
+    + rs.getString(44)
+    + "        </td>"
+    + "    </tr>"
+    + "</table>");
+    }
+    %>
 
-    </tr>
-    <tr>
-        <td class="w3-border">Foi verificado a possibilidade de o usário estar 100% conectado ao
-            ponto de ancoragem e o mesmo foi roientado</td>
-        <td class="w3-border">
-            <% %>
-        </td>
-
-    </tr>
-    <tr>
-        <td class="w3-border">O ponto de ancoragem (não projetado) suportará 2.268kg?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
-
-    </tr>
-    <tr>
-        <td class="w3-border">O Executante está utilizando os EPI's necessários para trabalho em
-            altura?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
-
-    </tr>
-    <tr>
-        <td class="w3-border">O ponto de ancoragem (projetado) foi aprovado por um profissional
-            legalmente habilitado?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
-
-    </tr>
-    <tr>
-        <td class="w3-border">O sistema de retenção foi ajustado de modo a evitar que o executante
-            tenha uma queda livre maior que 1,80m?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
-
-    </tr>
-    <tr>
-        <td class="w3-border">Em caso de queda o talabarte/travaquedas foi instalado de modo que o
-            usuário não possa bater contra instalações/equipamentos abaixo ou dos lados (efeito
-            pêndulo)?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
-
-    </tr>
-    <tr>
-        <td class="w3-border">Todos os equipamentos usados na retenção de quedas foram inspecionados
-            conforme plano de inspeção e estão aprovados?</td>
-        <td class="w3-border">
-            <% %>
-        </td>
-
-    </tr>
-</table>
 <!-- serviço em altura -->
 <h2>ESCAVAÇÃO E DEMOLIÇÃO</h2>
 <table class="w3-table-all">
