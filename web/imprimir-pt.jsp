@@ -204,17 +204,6 @@
 
 %>
 
-
-
-
-
-
-
-
-
-
-
-
 <!-- Trabalho com eletricidade -->
 <h3>TRABALHO COM ELETRICIDADE</h3>
 <%    //seção eletrica
@@ -520,7 +509,8 @@
                 + "        <td class=\"w3-border\">"
                 + rs.getString(50)
                 + "        </td>"
-                + "    </tr>");
+                + "    </tr>"
+                + "    </table>");
 
     }
 %>
@@ -674,125 +664,155 @@
 
 <!-- ABERTURA DE LINHAS E EQUIPAMENTOS -->
 <h2>ABERTURA DE LINHAS E EQUIPAMENTOS</h2>
-<table class="table w3-table-all">
-    <tr>
-        <th class="w3-border">
-            Item
-        </th>
-        <th class="w3-border">
-            Resposta
-        </th>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Foram analisados os riscos envolvidos e precauções necessárias?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Há necessidade de duplo bloqueio?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Foi utilizado algum método de descontaminação ou purga do sistema (drenagem, sopragem,
-            lavagem, despressurização ou resfriamento) ?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Serviço em linha ou equipamento com material perigoso?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
+<%    if (rs.getString(61).isEmpty()
+            && rs.getString(62).isEmpty()
+            && rs.getString(63).isEmpty()
+            && rs.getString(64).isEmpty()) {
 
-</table>
+        out.print("<H4>   *  Não Aplicável</H4>");
+
+    } else {
+
+        out.print("<table class=\"table w3-table-all\">"
+                + "    <tr>"
+                + "        <th class=\"w3-border\">"
+                + "            Item"
+                + "        </th>"
+                + "        <th class=\"w3-border\">"
+                + "            Resposta"
+                + "        </th>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            Foram analisados os riscos envolvidos e precauções necessárias?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(61)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "        Há necessidade de duplo bloqueio?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(63)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            Foi utilizado algum método de descontaminação ou purga do sistema (drenagem, sopragem,"
+                + "            lavagem, despressurização ou resfriamento) ?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(62)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            Serviço em linha ou equipamento com material perigoso?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(64)
+                + "        </td>"
+                + "    </tr>"
+                + "</table>");
+    }
+
+%>
+
 
 <!-- MOVIMENTAÇÃO E IÇAMENTO DE CARGAS -->
 <h2>MOVIMENTAÇÃO E IÇAMENTO DE CARGAS</h2>
-<table class="table w3-table-all">
-    <tr>
-        <th class="w3-border">
-            Item
-        </th>
-        <th class="w3-border">
-            Resposta
-        </th>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Verificado se o equipamento possui tabela de carga em português na cabine do operador? O
-            operador verificou a tabela para esta manobra?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Os olhais e pontos de pegas estão de acordo com a capacidade de carga? Cintas estão
-            definidas com a capacidade por códigos de cores e as etiquetas estão legíveis? Os cabos
-            de aço estão em perfeitas condições de uso com os grampos adequados?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Apresentado check list de inspeção de pré-uso dos equipamentos, se necessário?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            O guindaste/guindauto está patolado e nivelado sobre calços de madeira e solo firme
-            longe de caixas de passagens e ou redes pluviais?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            A área foi isolada e sinalizada e pessoas estão fora de zona de risco? Existe corda para
-            ser utilizada na movimentação da carga, neutralizando o contato com as mãos?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            O raio de movimentação da lança e carga estão livres de obstáculos e redes elétricas?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-    <tr>
-        <td class="w3-border">
-            Foram checadas as condições do tempo (vento, chuva e descargas atmosféricas) que podem
-            interferir na movimentação da carga?
-        </td>
-        <td class="w3-border">
-            <% %>
-        </td>
-    </tr>
-</table>
+<%    if (rs.getString(65).isEmpty()
+            && rs.getString(66).isEmpty()
+            && rs.getString(67).isEmpty()
+            && rs.getString(68).isEmpty()
+            && rs.getString(69).isEmpty()
+            && rs.getString(70).isEmpty()
+            && rs.getString(71).isEmpty()) {
+
+        out.print("<H4>   *  Não Aplicável</H4>");
+
+    } else {
+
+        out.print("<table class=\"table w3-table-all\">"
+                + "    <tr>"
+                + "        <th class=\"w3-border\">"
+                + "            Item"
+                + "        </th>"
+                + "        <th class=\"w3-border\">"
+                + "            Resposta"
+                + "        </th>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            Verificado se o equipamento possui tabela de carga em português na cabine do operador? O"
+                + "            operador verificou a tabela para esta manobra?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(65)
+                + "    </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            Os olhais e pontos de pegas estão de acordo com a capacidade de carga? Cintas estão"
+                + "            definidas com a capacidade por códigos de cores e as etiquetas estão legíveis? Os cabos"
+                + "            de aço estão em perfeitas condições de uso com os grampos adequados?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(69)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            Apresentado check list de inspeção de pré-uso dos equipamentos, se necessário?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(66)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            O guindaste/guindauto está patolado e nivelado sobre calços de madeira e solo firme"
+                + "            longe de caixas de passagens e ou redes pluviais?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(70)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "            A área foi isolada e sinalizada e pessoas estão fora de zona de risco? Existe corda para"
+                + "            ser utilizada na movimentação da carga, neutralizando o contato com as mãos?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(67)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "        O raio de movimentação da lança e carga estão livres de obstáculos e redes elétricas?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(71)
+                + "        </td>"
+                + "    </tr>"
+                + "    <tr>"
+                + "        <td class=\"w3-border\">"
+                + "        Foram checadas as condições do tempo (vento, chuva e descargas atmosféricas) que podem"
+                + "        interferir na movimentação da carga?"
+                + "        </td>"
+                + "        <td class=\"w3-border\">"
+                + rs.getString(68)
+                + "        </td>"
+                + "    </tr>"
+                + "</table>");
+
+    }
+%>
+
+
+
 
 <!-- EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL -->
 <h2>EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL</h2>
@@ -827,7 +847,80 @@
             Luva de segurança para riscos mecânicos
         </td>
     </tr>
-    <% %>
+    <%
+        if (rs.getString(72) != null) {
+            out.print("<tr><td>" + rs.getString(72) + "</td></tr>");
+        }
+        if (rs.getString(73) != null) {
+            out.print("<tr><td>" + rs.getString(73) + "</td></tr>");
+        }
+        if (rs.getString(74) != null) {
+            out.print("<tr><td>" + rs.getString(74) + "</td></tr>");
+        }
+        if (rs.getString(75) != null) {
+            out.print("<tr><td>" + rs.getString(75) + "</td></tr>");
+        }
+        if (rs.getString(76) != null) {
+            out.print("<tr><td>" + rs.getString(76) + "</td></tr>");
+        }
+        if (rs.getString(77) != null) {
+            out.print("<tr><td>" + rs.getString(77) + "</td></tr>");
+        }
+        if (rs.getString(78) != null) {
+            out.print("<tr><td>" + rs.getString(78) + "</td></tr>");
+        }
+        if (rs.getString(79) != null) {
+            out.print("<tr><td>" + rs.getString(79) + "</td></tr>");
+        }
+        if (rs.getString(80) != null) {
+            out.print("<tr><td>" + rs.getString(80) + "</td></tr>");
+        }
+        if (rs.getString(81) != null) {
+            out.print("<tr><td>" + rs.getString(81) + "</td></tr>");
+        }
+        if (rs.getString(82) != null) {
+            out.print("<tr><td>" + rs.getString(82) + "</td></tr>");
+        }
+        if (rs.getString(83) != null) {
+            out.print("<tr><td>" + rs.getString(83) + "</td></tr>");
+        }
+        if (rs.getString(84) != null) {
+            out.print("<tr><td>" + rs.getString(84) + "</td></tr>");
+        }
+        if (rs.getString(85) != null) {
+            out.print("<tr><td>" + rs.getString(85) + "</td></tr>");
+        }
+        if (rs.getString(86) != null) {
+            out.print("<tr><td>" + rs.getString(86) + "</td></tr>");
+        }
+        if (rs.getString(87) != null) {
+            out.print("<tr><td>" + rs.getString(87) + "</td></tr>");
+        }
+        if (rs.getString(88) != null) {
+            out.print("<tr><td>" + rs.getString(88) + "</td></tr>");
+        }
+        if (rs.getString(89) != null) {
+            out.print("<tr><td>" + rs.getString(89) + "</td></tr>");
+        }
+        if (rs.getString(90) != null) {
+            out.print("<tr><td>" + rs.getString(90) + "</td></tr>");
+        }
+        if (rs.getString(91) != null) {
+            out.print("<tr><td>" + rs.getString(91) + "</td></tr>");
+        }
+        if (rs.getString(92) != null) {
+            out.print("<tr><td>" + rs.getString(92) + "</td></tr>");
+        }
+        if (rs.getString(93) != null) {
+            out.print("<tr><td>" + rs.getString(93) + "</td></tr>");
+        }
+        if (rs.getString(94) != null) {
+            out.print("<tr><td>" + rs.getString(94) + "</td></tr>");
+        }
+        if (rs.getString(95) != null) {
+            out.print("<tr><td>" + rs.getString(95) + "</td></tr>");
+        }
+    %>
 </table>
 <p><strong>Inspecionei o local do serviço e verifiquei que o mesmo pode ser executado com segurança.
         Aprovo e autorizo o início do serviço.</strong></p>
@@ -837,7 +930,7 @@
 <table class="w3-table-all">
     <tr>
         <td>
-            Emitente: <%%>
+            Emitente: <% out.print(rs.getShort(98)); %>
         </td>
         <td>
             Assinatura: ______________________
@@ -845,7 +938,7 @@
     </tr>
     <tr>
         <td>
-            Responsável pela execução: <%%>
+            Responsável pela execução: <% out.print(rs.getShort(97)); %>
         </td>
         <td>
             Assinatura: ______________________
@@ -853,7 +946,7 @@
     </tr>
     <tr>
         <td>
-            Responsável pela área/setor: <%%>
+            Responsável pela área/setor: <% out.print(rs.getShort(96)); %>
         </td>
         <td>
             Assinatura: ______________________
@@ -861,6 +954,90 @@
     </tr>
 </table>
 
+<h2>Participantes</h2>
+<table class="w3-table-all">
+    <tr>
+        <th>Nome:</th>
+        <th>Empresa:</th>
+        <th>P.A.</th>
+    </tr>
+    <%
+        if (rs.getString(99).isEmpty() && rs.getString(100).isEmpty() && rs.getString(101).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(99) + "</td>"
+                    + "        <td>" + rs.getString(100) + "</td>"
+                    + "        <td>" + rs.getString(101) + "</td>"
+                    + "    </tr>");
+        }
+
+        if (rs.getString(102).isEmpty() && rs.getString(103).isEmpty() && rs.getString(104).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(102) + "</td>"
+                    + "        <td>" + rs.getString(103) + "</td>"
+                    + "        <td>" + rs.getString(104) + "</td>"
+                    + "    </tr>");
+        }
+
+        if (rs.getString(105).isEmpty() && rs.getString(106).isEmpty() && rs.getString(107).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(105) + "</td>"
+                    + "        <td>" + rs.getString(106) + "</td>"
+                    + "        <td>" + rs.getString(107) + "</td>"
+                    + "    </tr>");
+        }
+
+        if (rs.getString(108).isEmpty() && rs.getString(109).isEmpty() && rs.getString(110).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(108) + "</td>"
+                    + "        <td>" + rs.getString(109) + "</td>"
+                    + "        <td>" + rs.getString(110) + "</td>"
+                    + "    </tr>");
+        }
+
+        if (rs.getString(111).isEmpty() && rs.getString(112).isEmpty() && rs.getString(113).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(111) + "</td>"
+                    + "        <td>" + rs.getString(112) + "</td>"
+                    + "        <td>" + rs.getString(113) + "</td>"
+                    + "    </tr>");
+        }
+
+        if (rs.getString(114).isEmpty() && rs.getString(115).isEmpty() && rs.getString(116).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(114) + "</td>"
+                    + "        <td>" + rs.getString(115) + "</td>"
+                    + "        <td>" + rs.getString(116) + "</td>"
+                    + "    </tr>");
+        }
+
+        if (rs.getString(117).isEmpty() && rs.getString(118).isEmpty() && rs.getString(119).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(117) + "</td>"
+                    + "        <td>" + rs.getString(118) + "</td>"
+                    + "        <td>" + rs.getString(119) + "</td>"
+                    + "    </tr>");
+        }
+
+        if (rs.getString(120).isEmpty() && rs.getString(121).isEmpty() && rs.getString(122).isEmpty()) {
+        } else {
+            out.print("<tr>"
+                    + "        <td>" + rs.getString(120) + "</td>"
+                    + "        <td>" + rs.getString(121) + "</td>"
+                    + "        <td>" + rs.getString(122) + "</td>"
+                    + "    </tr>");
+        }
+
+    %>
+
+
+</table>
 
 <h2>Itens a serem verificados no fechamento da permissão</h2>
 <p><strong>Assinale os items conforme fechamento da PT</strong></p>
