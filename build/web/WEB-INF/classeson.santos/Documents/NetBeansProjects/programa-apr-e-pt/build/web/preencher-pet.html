@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Preencher PET</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <form action="salvar-pet.jsp" method="post">
+            <!-- cabeçario -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h3 style="text-align: center;">Permissão de Entrada e Trabalho</h3>
+            </div>
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Departamento:</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="text" name="pet-departamento">
+            </div>
+
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Equipamento / local:</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="text" name="pet-equip-local">
+            </div>
+
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Qual é a data de abertura?</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="date" name="data-abertura-pet">
+            </div>
+
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Qual horário de inicio?</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="time" name="hora-abertura-pet">
+            </div>
+
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Descrição detalhada do serviço:</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="text" name="desc-det-serv-pet">
+            </div>
+
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Local especifico do serviço:</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="text" name="local-esp-serv-pet">
+            </div>
+            <p></p>
+            <!-- final do cabeçario -->
+
+            <!-- Procedimentos -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h3 style="text-align: center;">Procedimentos</h3>
+            </div>
+            <!-- avaliação inicial da atmosfera -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h5 style="text-align: center;">Avaliação inicial da atmosfera:</h5>
+            </div>
+
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Oxigênio (%):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="oxigenio-1-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Gases / vapores toxicos (ppm):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="gases-vap-tox-1-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Inflamáveis (%LIE):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="inflamaveis-1-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Poeiras / fumos / nevoas (Mg/M³):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="poeiras-fum-nev-1-pet">
+                </div>
+            </div>
+
+            <p></p>
+            <!-- Avaliação após ventilação e isolamento -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h5 style="text-align: center;">Avaliação após ventilação e isolamento:</h5>
+            </div>
+
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Oxigênio (%):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="oxigenio-2-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Gases / vapores toxicos (ppm):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="gases-vap-tox-2-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Inflamáveis (%LIE):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="inflamaveis-2-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Poeiras / fumos / nevoas (Mg/M³):</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="poeiras-fum-nev-2-pet">
+                </div>
+
+            </div>
+
+            <p></p>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>A área foi inspecionada e, isolada e sinalizada antes do ínicio da tarefa?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="areas-insp-isol-pet" id="areas-insp-isol-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Bloqueio, travamento e etiquetagem?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="bloq-trav-et-pet" id="bloq-trav-et-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Ventilação / exaustão?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="vent-exaust-pet" id="vent-exaust-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Treinamento de todos os colaboradores é atual?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="treinamento-pet" id="treinamento-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Equipamento de monitoramento dos gases aprovovado e certificado para áreas potencialmente explosivas?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="equip-aprov-pet" id="equip-aprov-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Equipamentos de proteção individual (EPI) aprovados para atividade?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="epi-aprov-pet" id="epi-aprov-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Cinto de segurança e linhas de vida para os trabalhadores autorizados?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="cinto-linha-trab-pet" id="cinto-linha-trab-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Purga e/ou lavagem?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="purga-lav-pet" id="purga-lav-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Isolamento?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="isolamento-pet" id="isolamento-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Iluminação geral e/ou 12V ou 24V?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="iluminacao-pet" id="iluminacao-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Procedimentos de comunicação?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="comunicacao-pet" id="comunicacao-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Extintores de incêndio?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="extintores-pet" id="extintores-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Cinto de segurança e linha de vida para equipe de resgate?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="cinto-resgate-pet" id="cinto-resgate-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Equipamento de movimentação vertical / suporte externos?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="equip-mov-vert-pet" id="equip-mov-vert-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <!-- Procedimentos que devem ser completados durante o desenvolvimento dos trabalhos -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h3 style="text-align: center;">Procedimentos que devem ser completados durante o desenvolvimento dos trabalhos</h3>
+            </div>
+
+            <div class="w3-border-bottom" style="display: flex;">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Permissão de trabaho a quente?</h5>
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <select class="w3-select" name="perm-a-quente-pet" id="perm-a-quente-pet">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+            <!-- Procedimentos de emergencia e resgate -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h3 style="text-align: center;">Procedimentos de emergência e resgate</h3>
+            </div>
+
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Equipe de resgate:</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="text" name="pet-proced-emerg-resg">
+            </div>
+
+            <!-- Colaboradores autorizados -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h3 style="text-align: center;">Colaboradores autorizados</h3>
+            </div>
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-1-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-1-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-1-pet">
+                </div>
+
+            </div>
+
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-2-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-2-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-2-pet">
+                </div>
+
+            </div>
+
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-3-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-3-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-3-pet">
+                </div>
+
+            </div>
+
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-4-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-4-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-4-pet">
+                </div>
+
+            </div>
+
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-5-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-5-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-5-pet">
+                </div>
+
+            </div>
+
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-6-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-6-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-6-pet">
+                </div>
+
+            </div>
+
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-7-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-7-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-7-pet">
+                </div>
+
+            </div>
+
+
+            <!-- campo de colaboradores -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-8-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-8-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-8-pet">
+                </div>
+
+            </div>
+
+            <div class="w3-container w3-bar w3-mobile">
+                <h6 style="text-align: center;"><b>* Campos do vigia</b>
+                </h6>
+            </div>
+
+            <!-- campo de vigia -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-v1-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-v1-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-v1-pet">
+                </div>
+
+            </div>
+
+            <!-- campo de vigia -->
+            <div class="w3-table-all">
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Pressão Arterial:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="pressao-arterial-v2-pet">
+                </div>
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Matricula:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="matricula-colab-v2-pet">
+                </div>
+
+                <div class="w3-container w3-cell w3-mobile">
+                    <h5>Nome:</h5>
+                    <input class="w3-border w3-round-large w3-padding-16" type="text" name="nome-colab-v2-pet">
+                </div>
+
+            </div>
+
+            <!-- Informações Adicionais -->
+            <div class="w3-container w3-bar w3-mobile w3-grey">
+                <h3 style="text-align: center;">Informações adicionais</h3>
+            </div>
+
+            <div class="w3-container w3-table w3-mobile">
+                <h5>Informações adicionais:</h5>
+                <input class="w3-border w3-round-large w3-bar w3-padding-16" type="text" name="pet-info-adicionais">
+            </div>
+            
+            <div class="w3-container w3-border-top w3-padding-16">
+                <button class="w3-btn w3-light-green">Salvar PET</button>
+            </div>
+
+
+
+        </form>
+    </body>
+</html>

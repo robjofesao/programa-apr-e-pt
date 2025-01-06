@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html lang="pt-br">
+
+<head>
+    <title>Preencher APR (Analise Preliminar de Riscos)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body class="w3-container">
+    <form action="salvar-apr.jsp" method="post">
+        <h2>Preenchimento da Análise Preliminar de Riscos</h2>
+        <h4 class="w3-bar w3-light-blue w3-padding-16 w3-container">Comece escolhendo o setor onde será feita a
+            atividade:</h4>
+        <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="setor_apr">
+            <option value="" disabled selected>Escolha o Setor</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        
+        <h4 class="w3-bar w3-light-blue w3-padding-16 w3-container">Qual é o serviço?</h4>
+        <input class="w3-input w3-border w3-round-large w3-padding-16" type="text" name="desc-serv-apr">
+        
+        <h4 class="w3-bar w3-light-blue w3-padding-16 w3-container">Qual é a data de abertura?</h4>
+        <input class="w3-border w3-round-large w3-bar w3-padding-16" type="date" name="data-abertura-apr">
+
+        <h4 class="w3-bar w3-light-blue w3-padding-16 w3-container">Quanto aos colaboradores:</h4>
+        <input class="w3-check" type="checkbox" id="colaboradores-proprios" name="colab_proprios" value="colab_proprios">
+        <label>Colaboradores próprios</label>
+        <p></p>
+        <input class="w3-check" type="checkbox" id="colaboradores-contratados" name="colab_terceiros" value="colab_terceiros">
+        <label>Colaboradores contratados</label>
+        <h4 class="w3-bar w3-light-blue w3-padding-16 w3-container">Tipo de serviço a ser executado:</h4>
+        <table class="w3-table-all">
+            <tr>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-serviço-mov-carga" name="tipo_serv_mov_cargas" value="tipo_serv_mov_cargas">
+                    <label>Serviço com movimentação de cargas</label>
+                </td>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-servico-eletricos" name="tipo_serv_eletricos" value="tipo_serv_eletricos">
+                    <label>Serviços elétricos</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-servico-mecanicos" name="tipo_serv_mecanicos" value="tipo_serv_mecanicos">
+                    <label>Serviços mecânicos</label>
+                </td>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-servico-a-quente" name="tipo_serv_a_quente" value="tipo_serv_a_quente">
+                    <label>Serviço a quente</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-servico-limpeza" name="tipo_serv_limpeza" value="tipo_serv_limpeza">
+                    <label>Serviço de limpeza</label>
+                </td>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-servico-operação" name="tipo_serv_operacao" value="tipo_serv_operacao">
+                    <label>Serviço de operação</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-servico-altura" name="tipo_serv_altura" value="tipo_serv_altura">
+                    <label>Serviço em altura</label>
+                </td>
+                <td>
+                    <input class="w3-check" type="checkbox" id="tipo-servico-espaco-confinado" name="tipo_serv_espaco_conf" value="tipo_serv_espaco_conf">
+                    <label>Serviço em espaço confinado</label>
+                </td>
+            </tr>
+        </table>
+        <p></p>
+        <label>Outros tipos de serviço</label>
+        <input class="w3-input w3-border w3-round-large w3-padding-16" type="text" name="tipo_serv_espaco_conf">
+        <p></p>
+
+        <table class="w3-table-all">
+            <!-- cabeçalho da tabela -->
+            <tr class="w3-light-blue">
+                <th>Riscos Avaliados</th>
+                <th>Medidas de Controle</th>
+
+            </tr>
+            <tr>
+                <!-- primeira linha da tabela -->
+                <td><input class="w3-check" type="checkbox" id="corte-oxicorte" name="riscos_ava_corte_oxi" value="riscos_ava_corte_oxi">
+                    <label>Corte com oxicorte</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-corte-oxicorte" name="medida_controle_corte_oxicorte" value="medida_controle_corte_oxicorte">
+                    <label>Fazer check list e corrigir ou substituir os itens com defeitos ou danificados</label>
+                </td>
+            </tr>
+            <tr>
+                <!-- segunda linha -->
+                <td><input class="w3-check" type="checkbox" id="corpo-estranho-olhos" name="riscos_ava_corpo_estranho" value="riscos_ava_corpo_estranho">
+                    <label>Corpo estranho nos olhos</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-corpo-estranho-olhos" name="medida_controle_corpo_estranho" value="medida_controle_corpo_estranho">
+                    <label>Utilizar os óculos de segurança e EPI's básicos</label>
+                </td>
+            </tr>
+            <tr>
+                <!-- terceira linha -->
+                <td><input class="w3-check" type="checkbox" id="ruido-intermitente-cont" name="riscos_ava_ruido" value="riscos_ava_ruido">
+                    <label>Ruído intermitente / continuo</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-ruido-intermit" name="medida_controle_ruido" value="medida_controle_ruido">
+                    <label>Utilizar o protetor auricular tipo plug / concha / espuma e os EPI's básicos</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- quarta linha -->
+                <td><input class="w3-check" type="checkbox" id="corte-perfuracao" name="riscos_ava_perf_maos" value="riscos_ava_perf_maos">
+                    <label>Corte com perfuração nas mãos</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-corte-perfuracao" name="medida_controle_perf_maos" value="medida_controle_perf_maos">
+                    <label>Utilizar luvas de segurança contra agentes mecânicos</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- quinta linha -->
+                <td><input class="w3-check" type="checkbox" id="queda-mesmo-nivel" name="riscos_ava_queda_mesmo_niv" value="riscos_ava_queda_mesmo_niv">
+                    <label>Queda no mesmo nível / com diferença de nível abaixo de 2Mt</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-queda-mesmo-nivel" name="medida_controle_queda_mesmo_niv" value="medida_controle_queda_mesmo_niv">
+                    <label>Andar com atenção, inspecionar visualmente os locais de trabalho</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- sexta linha -->
+                <td><input class="w3-check" type="checkbox" id="queda-de-objetos" name="riscos_ava_queda_obj" value="riscos_ava_queda_obj">
+                    <label>Queda de objetos</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-queda-objetos" name="medida_controle_queda_obj" value="medida_controle_queda_obj">
+                    <label>Andar com atenção em escadarias, pisos inferiores e superiores, utilizar o capacete de
+                        segurança</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- sétima linha -->
+                <td><input class="w3-check" type="checkbox" id="montagem-andaime" name="riscos_ava_mont_andaime" value="riscos_ava_mont_andaime">
+                    <label>Montagem / desmontagem de andaime</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-montagem-andaime" name="medida_controle_mont_andaime" value="medida_controle_mont_andaime">
+                    <label>Avaliar: os riscos da área, piso de sustentação do andaime, fixação do andaime, instalação da
+                        escada, e isolamento de área</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- oitava linha -->
+                <td><input class="w3-check" type="checkbox" id="trabalho-altura" name="riscos_ava_trab_altura" value="riscos_ava_trab_altura">
+                    <label>Trabalho em altura acima de 2Mt</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-trabalho-altura" name="medida_controle_trab_altura" value="medida_controle_trab_altura">
+                    <label>Utilizar: cinto de segurança paraquedista/linha de vida ou trava-queda, verificar o ponto de
+                        fixação dos mosquetões. Realizar: aferição de pressão, abertura de PT. </label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- nona linha -->
+                <td><input class="w3-check" type="checkbox" id="queimadura" name="riscos_ava_queimadura" value="riscos_ava_queimadura">
+                    <label>Queimadura</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-queimadura" name="medida_controle_queimadura" value="medida_controle_queimadura">
+                    <label>Utilizar luva de raspa/couro, óculos de segurança lente nº 05, avental de couro/raspa, manga
+                        de couro/raspa, perneira de couro/raspa </label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima linha -->
+                <td><input class="w3-check" type="checkbox" id="sinistro-transito" name="riscos_ava_sinistro_trans" value="riscos_ava_sinistro_trans">
+                    <label>Sinistro de trânsito ou atropelamento</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-sinistro-transito" name="medida_controle_sinistro_trans" value="medida_controle_sinistro_trans">
+                    <label>Realizar isolamento de área, com fitas zebradas/barreiras/cones e/ou cavaletes</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima primeira linha -->
+                <td><input class="w3-check" type="checkbox" id="icamento-tombamento" name="riscos_ava_icamento" value="riscos_ava_icamento">
+                    <label>Içamento e/ou tombamento de carga</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-icamento-tombamento" name="medida_controle_icamento" value="medida_controle_icamento">
+                    <label>Isolamento de área, verificar os olhais, pontos de pega na carga, condições climáticas,
+                        consultar operação do equipamento de guinda/tombar</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima segunda linha -->
+                <td><input class="w3-check" type="checkbox" id="espaco-confinado" name="riscos_ava_espaco_conf" value="riscos_ava_espaco_conf">
+                    <label>Trabalho em espaço confinado</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-espaco-confinado" name="medida_controle_espaco_conf" value="medida_controle_espaco_conf">
+                    <label>Verificar concentração dos gases com aparelho medidor, usar ventilação para retirada dos
+                        gases, abrir PET, aferição de pressão</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima terceira linha -->
+                <td><input class="w3-check" type="checkbox" id="iluminacao-deficiente" name="riscos_ava_iluminacao" value="riscos_ava_iluminacao">
+                    <label>Iluminação Deficiente</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-iluminacao-deficiente" name="medida_controle_iluminacao" value="medida_controle_iluminacao">
+                    <label>Instalar refletores blindados de 12v e/ou 24v, e/ou utilizar lanternas</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima quarta linha -->
+                <td><input class="w3-check" type="checkbox" id="lesao-mao-pe-queda-objeto" name="riscos_ava_lesao_pe_mao" value="riscos_ava_lesao_pe_mao">
+                    <label>Lesão nas mãos/pés por queda de objeto</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-lesao-mao-pe" name="medida_controle_lesao_pe_mao" value="medida_controle_lesao_pe_mao">
+                    <label>Respeitar sinalizações, avisos estabelecidos nas áreas</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima quinta linha -->
+                <td><input class="w3-check" type="checkbox" id="calor-excessivo" name="riscos_ava_calor_excessivo" value="riscos_ava_calor_excessivo">
+                    <label>Calor excessivo</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-calor-excessivo" name="medida_controle_calor_excessivo" value="medida_controle_calor_excessivo">
+                    <label>Utilizar Epi retardante ao calor (conjunto aluminizado)</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima sétima linha -->
+                <td><input class="w3-check" type="checkbox" id="poeira-particulados-fuligem" name="riscos_ava_poeiras_part" value="riscos_ava_poeiras_part">
+                    <label>Poeiras, Particulados, fuligem</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-poeira-particulados-fuligem" name="medida_controle_poeiras_part" value="medida_controle_poeiras_part">
+                    <label>Utilizar Epi retardante ao calor (conjunto aluminizado)</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima oitava linha -->
+                <td><input class="w3-check" type="checkbox" id="manuseio-quimicos" name="riscos_ava_manu_prod_quim" value="riscos_ava_manu_prod_quim">
+                    <label>Manuseio de produtos químicos/agentes químicos</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-manuseio-quimicos" name="medida_controle_manu_prod_quim" value="medida_controle_manu_prod_quim">
+                    <label>Utilizar luvas de seg. conta agentes químicos, óculos de seg. ampla-visão, conjunto de seg.
+                        impermeável, botina de borracha, respirador</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- decima nona linha -->
+                <td><input class="w3-check" type="checkbox" id="projecao-incandecente" name="riscos_ava_proj_mat_inca" value="riscos_ava_proj_mat_inca">
+                    <label>Projeção de material incandescente</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-projecao-incandescente" name="medida_controle_proj_mat_inca" value="medida_controle_proj_mat_inca">
+                    <label>Utilizar anteparos/bloqueios na trajetória de saída da projeção</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima linha -->
+                <td><input class="w3-check" type="checkbox" id="lambada-mangueira" name="riscos_ava_lambada_mangueira" value="riscos_ava_lambada_mangueira">
+                    <label>Lambada por estouro de mangueira</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-lambada-mangueira" name="medida_controle_lambada_mangueira" value="medida_controle_lambada_mangueira">
+                    <label>verificar estado das mangueiras e ou conexões</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima primeira linha -->
+                <td><input class="w3-check" type="checkbox" id="escavacao-demulicao" name="riscos_ava_escav_demol" value="riscos_ava_escav_demol">
+                    <label>Escavação e/ou demolição</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-escavacao-demolicao" name="medida_controle_escav_demol" value="medida_controle_escav_demol">
+                    <label>Avaliação do terreno ou área edificada</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima segunda linha -->
+                <td><input class="w3-check" type="checkbox" id="limpeza-equip-eletrico" name="riscos_ava_limp_man_equip_eletricos" value="riscos_ava_limp_man_equip_eletricos">
+                    <label>Limpeza e manutenção de equipamentos elétricos</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-limpeza-equip-eletricos" name="medida_controle_limp_man_equip_eletricos" value="medida_controle_limp_man_equip_eletricos"> 
+                    <label>Desenergizar, bloqueio de alimentação, aterramento, bloqueio individual</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima terceira linha -->
+                <td><input class="w3-check" type="checkbox" id="mant-limp-equip-mec" name="riscos_ava_mant_limp_squip_mec" value="riscos_ava_mant_limp_squip_mec">
+                    <label>Manutenção e limpeza de equipamentos mecânicos</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-mant-limp-equip-mec" name="medida_controle_mant_limp_squip_mec" value="medida_controle_mant_limp_squip_mec">
+                    <label>Desenergizar, bloqueio de alimentação, bloqueio individual</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima quarta linha -->
+                <td><input class="w3-check" type="checkbox" id="solda-amb-cont" name="riscos_ava_solda_contam" value="riscos_ava_solda_contam">
+                    <label>Solda em ambientes contaminados</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-solda-amb-cont" name="medida_controle_solda_contam" value="medida_controle_solda_contam">
+                    <label>limpeza do ambiente, bloqueio de linha, abrir portas de visitas</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima quinta linha -->
+                <td><input class="w3-check" type="checkbox" id="limp-amb-alta-temp" name="riscos_ava_limp_alta_temp" value="riscos_ava_limp_alta_temp">
+                    <label>Limpeza em ambientes de alta temperatura</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-limp-amb-alta-temp" name="medida_controle_limp_alta_temp" value="medida_controle_limp_alta_temp">
+                    <label>Consultar operador C.O.E. verificar pressão negativa, utilizar EPI's adequados</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima sexta linha -->
+                <td><input class="w3-check" type="checkbox" id="desm-mont-equip-acess" name="riscos_ava_desm_mont_estru" value="riscos_ava_desm_mont_estru">
+                    <label>Desmontagem/montagem de estrutura equipamento/acessório</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-desm-mont-equip-acess" name="medida_controle_desm_mont_estru" value="medida_controle_desm_mont_estru">
+                    <label>Desligamento hidráulico, desligamento elétrico, bloqueio (LOTO)</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima sétima linha -->
+                <td><input class="w3-check" type="checkbox" id="sopragem-linha" name="riscos_ava_sopragem_linha" value="riscos_ava_sopragem_linha">
+                    <label>Sopragem de Linha</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-sopragem-linha" name="medida_controle_sopragem_linha" value="medida_controle_sopragem_linha">
+                    <label>Comunicação previa, sinalização e evacuação da área, consultar comitê de operações de
+                        segurança</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima oitava linha -->
+                <td><input class="w3-check" type="checkbox" id="limpeza-lixadeira" name="riscos_ava_limp_lixadeira" value="riscos_ava_limp_lixadeira">
+                    <label>Limpeza mecânica com lixadeira</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-limpeza-lixadeira" name="medida_controle_limp_lixadeira" value="medida_controle_limp_lixadeira">
+                    <label>Fazer check list, utilizar os EPI's adequados</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- vigésima nona linha -->
+                <td><input class="w3-check" type="checkbox" id="rompimento-adutora" name="riscos_ava_romp_adut" value="riscos_ava_romp_adut">
+                    <label>Rompimento de adutora</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-rompimento-adutora" name="medida_controle_romp_adut" value="medida_controle_romp_adut">
+                    <label>comunicar operador para desligamento das bombas, sinalizar a área</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- trigésima linha -->
+                <td><input class="w3-check" type="checkbox" id="comisionamento" name="riscos_ava_comissionamento" value="riscos_ava_comissionamento">
+                    <label>Comissionamento (partida/checagem de equipamentos)</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-comissionamento" name="medida_controle_comissionamento" value="medida_controle_comissionamento">
+                    <label>Comunicação previa, consulta ao comitê sobre a operação e adotar medidas de segurança</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- trigésima primeira linha -->
+                <td><input class="w3-check" type="checkbox" id="acopla-tub-sub" name="riscos_ava_acop_tub_sub" value="riscos_ava_acop_tub_sub">
+                    <label>Acoplamento de tubulação no subsolo</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-acopla-tub-sub" name="medida_controle_acop_tub_sub" value="medida_controle_acop_tub_sub">
+                    <label>Manter borda da escavação de 1,5 metros, proteger a escavação contra entrada de águas
+                        superficiais e desviar trafego</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- trigésima segunda linha -->
+                <td><input class="w3-check" type="checkbox" id="desabamento-rompimento-estrutura" name="riscos_ava_desabamento" value="riscos_ava_desabamento">
+                    <label>Desabamento/rompimento de estrutura</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-desabamento-rompimento-estrutura" name="medida_controle_desabamento" value="]medida_controle_desabamento">
+                    <label>Evacuar pessoas, isolar a área, manter isolamento, agir conforme orientações de
+                        segurança</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- trigésima terceira linha -->
+                <td><input class="w3-check" type="checkbox" id="avaliacao-riscos-inicio-atividade" name="riscos_ava_avaliacao_riscos" value="riscos_ava_avaliacao_riscos">
+                    <label>Avaliação de riscos ou inicio de atividade</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-avaliacao-riscos-inicio-atividade" name="medida_controle_avaliacao_riscos" value="medida_controle_avaliacao_riscos">
+                    <label>Abrir PT (permissão de Trabalho)</label>
+                </td>
+
+            </tr>
+            <tr>
+                <!-- trigésima quarta linha -->
+                <td><input class="w3-check" type="checkbox" id="presenca-animais-insetos-peconhentos" name="riscos_ava_animais_peconhe" value="riscos_ava_animais_peconhe">
+                    <label>Presença de animais ou insetos peçonhentos</label>
+                </td>
+                <td><input class="w3-check" type="checkbox" id="medida-controle-presenca-animais-insetos-peconhentos" name="medida_controle_animais_peconhe" value="medida_controle_animais_peconhe">
+                    <label>Trabalhar com atenção, contatar o setor de meio-ambiente, usar os EPI's adequados</label>
+                </td>
+
+            </tr>
+        </table>
+        <p class="w3-bar w3-light-blue w3-padding-16 w3-container">RECOMENDAÇÕES COMPLEMENTARES</p>
+        <textarea class="w3-bar w3-round-large" id="id" name="recomendacoes_complementares" rows="5" cols="10"></textarea>
+        <p class="w3-bar w3-light-blue w3-padding-16 w3-container">REUNIÃO ESPECIFICA PARA INICIO DO SERVIÇO</p>
+        <!-- tabela de reunião especifica -->
+        <table class="w3-table-all w3-mobile">
+            <tr>
+                <td>A equipe tem pleno conhecimento dos riscos neste documento?</td>
+                <td><select class="w3-select" id="opcao1" name="reuniao_serv_1" style="width:100px">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Foram verificadas condições físicas e estado de espírito dos membros da equipe?</td>
+                <td><select class="w3-select" id="opcao2" name="reuniao_serv_2" style="width: 100px">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Comentários sobre acidentes já ocorridos na execução deste serviço?</td>
+                <td><select class="w3-select" id="opcao3" name="reuniao_serv_3" style="width: 100px">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Verificou-se o porte e as condições dos EPI por parte dos membros da equipe?</td>
+                <td><select class="w3-select" id="opcao4" name="reuniao_serv_4" style="width: 100px">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Foram observadas as condições ambientais no local de trabalho?</td>
+                <td><select class="w3-select" id="opcao5" name="reuniao_serv_5" style="width: 100px">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Foram realizadas inspeções de pré-uso nas ferramentas e/ou equipamentos?</td>
+                <td><select class="w3-select" id="opcao6" name="reuniao_serv_6" style="width: 100px">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <h4>Qual a data da reunião?</h4>
+        <input class="w3-border w3-round-large w3-bar w3-padding-16" type="date" name="data_reuniao_apr">
+        <p></p>
+        <!-- TABELA DE COMPONENTES DA EQUIPE -->
+        <table class="w3-table-all">
+            <!-- cabeçalho da tabela -->
+            <tr class="w3-light-blue">
+                <th colspan="2">COMPONENTES DA EQUIPE</th>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat1" name="componentes_mat_1"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_1" id="nome1"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat2" name="componentes_mat_2"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_2" id="nome2"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat3" name="componentes_mat_3"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_3" id="nome3"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat4" name="componentes_mat_4"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_4" id="nome4"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat5" name="componentes_mat_5"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_5" id="nome5"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat6" name="componentes_mat_6"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_6" id="nome6"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat7" name="componentes_mat_7"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_7" id="nome7"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat8" name="componentes_mat_8"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_8" id="nome8"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat9" name="componentes_mat_9"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_9" id="nome9"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat10" name="componentes_mat_10"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_10" id="nome10"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat11" name="componentes_mat_11"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_11" id="nome11"
+                        placeholder="Digite o nome"></td>
+            </tr>
+            <tr>
+                <td><label>Matrícula:</label><input class="w3-bar w3-border w3-round" type="text" id="mat12" name="componentes_mat_12"
+                        placeholder="Digite a matricula"></td>
+                <td><label>Nome:</label><input class="w3-bar w3-border w3-round" type="text" name="componentes_nome_12" id="nome12"
+                        placeholder="Digite o nome"></td>
+            </tr>
+        </table>
+        <p></p>
+
+        <table class="w3-table-all">
+            <tr>
+                <td><label>Matrícula ou nome do responsável pela área:</label><input class="w3-bar w3-border w3-round"
+                                                                                     type="text" id="rep-area" placeholder="Digite a matricula ou o nome" name="matricula_nome_resp_area"></td>
+
+
+            </tr>
+            <tr>
+                <td><label>Matrícula ou nome do responsável pela execução:</label><input
+                        class="w3-bar w3-border w3-round" type="text" id="rep-exec"
+                        placeholder="Digite a matricula ou o nome" name="matricula_nome_resp_exec"></td>
+
+            </tr>
+            <tr>
+                <td><label>Responsável pela contratada:</label><input class="w3-bar w3-border w3-round" type="text"
+                                                                      id="rep-contra" placeholder="Digite a matricula ou o nome" name="responsavel_contratada"></td>
+
+            </tr>
+            <tr>
+                <td><label>SST responsável:</label><input class="w3-bar w3-border w3-round" type="text" id="rep-sst"
+                                                          placeholder="Digite a matricula ou o nome" name="sst_resp"></td>
+
+            </tr>
+            <tr>
+                <td><label>Solicitante do Serviço:</label><input class="w3-bar w3-border w3-round" type="text"
+                                                                 id="solic-serv" placeholder="Digite a matricula ou o nome" name="solicitante_serv"></td>
+
+            </tr>
+
+        </table>
+        <p></p>
+        <button class="w3-btn w3-light-green">Registrar</button>
+    </form>
+</body>
+
+</html>

@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Impressão de Permissão de Entrada e Trabalho</title>
-        <link rel="stylesheet" href="w3.css" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     </head>
     <% try { //fazer conexÃ£o com o banco de dados Connection connection; 
             PreparedStatement ps;

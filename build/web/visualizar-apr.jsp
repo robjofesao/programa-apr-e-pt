@@ -5,7 +5,7 @@
 <html lang="pt-br">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="w3.css" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
         <title>Visualizar Apr</title>
     </head>
     <body>
