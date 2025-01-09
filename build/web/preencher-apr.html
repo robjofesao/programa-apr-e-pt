@@ -10,7 +10,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="w3.css">
+    <style>
+        .smc{}
+        .sel{}
+    </style>
+    <script>
+    /**
+ * Comment
+ * @param {type} parameter
+ * essa função serve para marcar os riscos dos serviços de forma automatica
+ */
+function marcar_serv_mov_carg(checkbox) {
+    // Seleciona todos os checkboxes com a classe 'outrosCheckbox'
+            const marcarCheck = document.querySelectorAll('.smc');
+
+            // Marca ou desmarca os outros checkboxes com base no estado do checkbox principal
+            marcarCheck.forEach(function(smc) {
+                smc.checked = checkbox.checked;
+            });
+}
+//função para os campos de servicos eletricos
+function marcar_serv_eletricos(checkbox){
+    const marcarEletric = document.querySelectorAll('.sel');
+    marcarEletric.forEach(function (sel){
+       sel.checked = checkbox.checked; 
+    });
+}
+    
+</script>
 </head>
+
 
 <body class="w3-container">
     <form action="salvar-apr.jsp" method="post">
@@ -40,11 +69,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <table class="w3-table-all">
             <tr>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-serviço-mov-carga" name="tipo_serv_mov_cargas" value="Serviço com movimentação de cargas">
+                    <input class="w3-check" type="checkbox" id="tipo-serviço-mov-carga" onclick="marcar_serv_mov_carg(this)" name="tipo_serv_mov_cargas" value="Serviço com movimentação de cargas">
                     <label>Serviço com movimentação de cargas</label>
                 </td>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-servico-eletricos" name="tipo_serv_eletricos" value="Serviços elétricos">
+                    <input class="w3-check" type="checkbox" id="tipo-servico-eletricos" onclick="marcar_serv_eletricos(this)" name="tipo_serv_eletricos" value="Serviços elétricos">
                     <label>Serviços elétricos</label>
                 </td>
             </tr>
@@ -141,10 +170,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </tr>
             <tr>
                 <!-- sexta linha -->
-                <td><input class="w3-check" type="checkbox" id="queda-de-objetos" name="riscos_ava_queda_obj" value="Queda de objetos">
+                <td><input class="w3-check smc" type="checkbox" id="queda-de-objetos" name="riscos_ava_queda_obj" value="Queda de objetos">
                     <label>Queda de objetos</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-queda-objetos" name="medida_controle_queda_obj" value="Andar com atenção em escadarias, pisos inferiores e superiores, utilizar o capacete de segurança">
+                <td><input class="w3-check smc" type="checkbox" id="medida-controle-queda-objetos" name="medida_controle_queda_obj" value="Andar com atenção em escadarias, pisos inferiores e superiores, utilizar o capacete de segurança">
                     <label>Andar com atenção em escadarias, pisos inferiores e superiores, utilizar o capacete de segurança</label>
                 </td>
 
@@ -196,10 +225,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </tr>
             <tr>
                 <!-- decima primeira linha -->
-                <td><input class="w3-check" type="checkbox" id="icamento-tombamento" name="riscos_ava_icamento" value="Içamento e/ou tombamento de carga">
+                <td><input class="w3-check smc" type="checkbox" id="icamento-tombamento" name="riscos_ava_icamento" value="Içamento e/ou tombamento de carga">
                     <label>Içamento e/ou tombamento de carga</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-icamento-tombamento" name="medida_controle_icamento" value="Isolamento de área, verificar os olhais, pontos de pega na carga, condições climáticas,
+                <td><input class="w3-check smc" type="checkbox" id="medida-controle-icamento-tombamento" name="medida_controle_icamento" value="Isolamento de área, verificar os olhais, pontos de pega na carga, condições climáticas,
                         consultar operação do equipamento de guinda/tombar">
                     <label>Isolamento de área, verificar os olhais, pontos de pega na carga, condições climáticas,
                         consultar operação do equipamento de guinda/tombar</label>
@@ -302,10 +331,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </tr>
             <tr>
                 <!-- vigésima segunda linha -->
-                <td><input class="w3-check" type="checkbox" id="limpeza-equip-eletrico" name="riscos_ava_limp_man_equip_eletricos" value="Limpeza e manutenção de equipamentos elétricos">
+                <td><input class="w3-check sel" type="checkbox" id="limpeza-equip-eletrico" name="riscos_ava_limp_man_equip_eletricos" value="Limpeza e manutenção de equipamentos elétricos">
                     <label>Limpeza e manutenção de equipamentos elétricos</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-limpeza-equip-eletricos" name="medida_controle_limp_man_equip_eletricos" value="Desenergizar, bloqueio de alimentação, aterramento, bloqueio individual"> 
+                <td><input class="w3-check sel" type="checkbox" id="medida-controle-limpeza-equip-eletricos" name="medida_controle_limp_man_equip_eletricos" value="Desenergizar, bloqueio de alimentação, aterramento, bloqueio individual"> 
                     <label>Desenergizar, bloqueio de alimentação, aterramento, bloqueio individual</label>
                 </td>
 
@@ -418,10 +447,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </tr>
             <tr>
                 <!-- trigésima terceira linha -->
-                <td><input class="w3-check" type="checkbox" id="avaliacao-riscos-inicio-atividade" name="riscos_ava_avaliacao_riscos" value="Avaliação de riscos ou inicio de atividade">
+                <td><input class="w3-check sel smc" type="checkbox" id="avaliacao-riscos-inicio-atividade" name="riscos_ava_avaliacao_riscos" value="Avaliação de riscos ou inicio de atividade">
                     <label>Avaliação de riscos ou inicio de atividade</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-avaliacao-riscos-inicio-atividade" name="medida_controle_avaliacao_riscos" value="Abrir PT (permissão de Trabalho)">
+                <td><input class="w3-check sel smc" type="checkbox" id="medida-controle-avaliacao-riscos-inicio-atividade" name="medida_controle_avaliacao_riscos" value="Abrir PT (permissão de Trabalho)">
                     <label>Abrir PT (permissão de Trabalho)</label>
                 </td>
 

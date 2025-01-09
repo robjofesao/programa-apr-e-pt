@@ -441,7 +441,7 @@
             && rs.getString(46).isEmpty()
             && rs.getString(47).isEmpty()
             && rs.getString(48).isEmpty()
-            && rs.getString(99).isEmpty()
+            && rs.getString(49).isEmpty()
             && rs.getString(50).isEmpty()) {
 
         out.print("<H4>   *  Não Aplicável</H4>");
@@ -850,76 +850,75 @@
     <%
         if (rs.getString(72) != null) {
             out.print("<tr><td>" + rs.getString(72) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(73) != null) {
             out.print("<tr><td>" + rs.getString(73) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(74) != null) {
             out.print("<tr><td>" + rs.getString(74) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(75) != null) {
             out.print("<tr><td>" + rs.getString(75) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(76) != null) {
             out.print("<tr><td>" + rs.getString(76) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(77) != null) {
             out.print("<tr><td>" + rs.getString(77) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(78) != null) {
             out.print("<tr><td>" + rs.getString(78) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(79) != null) {
             out.print("<tr><td>" + rs.getString(79) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(80) != null) {
             out.print("<tr><td>" + rs.getString(80) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(81) != null) {
             out.print("<tr><td>" + rs.getString(81) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(82) != null) {
             out.print("<tr><td>" + rs.getString(82) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(83) != null) {
             out.print("<tr><td>" + rs.getString(83) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(84) != null) {
             out.print("<tr><td>" + rs.getString(84) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(85) != null) {
             out.print("<tr><td>" + rs.getString(85) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(86) != null) {
             out.print("<tr><td>" + rs.getString(86) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(87) != null) {
             out.print("<tr><td>" + rs.getString(87) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(88) != null) {
             out.print("<tr><td>" + rs.getString(88) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(89) != null) {
             out.print("<tr><td>" + rs.getString(89) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(90) != null) {
             out.print("<tr><td>" + rs.getString(90) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(91) != null) {
             out.print("<tr><td>" + rs.getString(91) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(92) != null) {
             out.print("<tr><td>" + rs.getString(92) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(93) != null) {
             out.print("<tr><td>" + rs.getString(93) + "</td></tr>");
-        }
+        }else{}
         if (rs.getString(94) != null) {
             out.print("<tr><td>" + rs.getString(94) + "</td></tr>");
-        }
-        if (rs.getString(95) != null) {
-            out.print("<tr><td>" + rs.getString(95) + "</td></tr>");
-        }
+        }else{}
+        if (rs.getString(95).isEmpty()) {
+        }else{out.print("<tr><td>" + rs.getString(95) + "</td></tr>");}
     %>
 </table>
 <p><strong>Inspecionei o local do serviço e verifiquei que o mesmo pode ser executado com segurança.
@@ -930,7 +929,7 @@
 <table class="w3-table-all">
     <tr>
         <td>
-            Emitente: <% out.print(rs.getShort(98)); %>
+            Emitente: <% out.print(rs.getString(98)); %>
         </td>
         <td>
             Assinatura: ______________________
@@ -938,7 +937,7 @@
     </tr>
     <tr>
         <td>
-            Responsável pela execução: <% out.print(rs.getShort(97)); %>
+            Responsável pela execução: <% out.print(rs.getString(97)); %>
         </td>
         <td>
             Assinatura: ______________________
@@ -946,7 +945,7 @@
     </tr>
     <tr>
         <td>
-            Responsável pela área/setor: <% out.print(rs.getShort(96)); %>
+            Responsável pela área/setor: <% out.print(rs.getString(96)); %>
         </td>
         <td>
             Assinatura: ______________________
@@ -957,7 +956,7 @@
 <h2>Participantes</h2>
 <table class="w3-table-all">
     <tr>
-        <th>Nome:</th>
+        <th>Nome / Assinatura:</th>
         <th>Empresa:</th>
         <th>P.A.</th>
     </tr>
@@ -965,7 +964,7 @@
         if (rs.getString(99).isEmpty() && rs.getString(100).isEmpty() && rs.getString(101).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(99) + "</td>"
+                    + "        <td>" + rs.getString(99) + " ________________________</td>"
                     + "        <td>" + rs.getString(100) + "</td>"
                     + "        <td>" + rs.getString(101) + "</td>"
                     + "    </tr>");
@@ -974,7 +973,7 @@
         if (rs.getString(102).isEmpty() && rs.getString(103).isEmpty() && rs.getString(104).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(102) + "</td>"
+                    + "        <td>" + rs.getString(102) + " ________________________</td>"
                     + "        <td>" + rs.getString(103) + "</td>"
                     + "        <td>" + rs.getString(104) + "</td>"
                     + "    </tr>");
@@ -983,7 +982,7 @@
         if (rs.getString(105).isEmpty() && rs.getString(106).isEmpty() && rs.getString(107).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(105) + "</td>"
+                    + "        <td>" + rs.getString(105) + " ________________________</td>"
                     + "        <td>" + rs.getString(106) + "</td>"
                     + "        <td>" + rs.getString(107) + "</td>"
                     + "    </tr>");
@@ -992,7 +991,7 @@
         if (rs.getString(108).isEmpty() && rs.getString(109).isEmpty() && rs.getString(110).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(108) + "</td>"
+                    + "        <td>" + rs.getString(108) + " ________________________</td>"
                     + "        <td>" + rs.getString(109) + "</td>"
                     + "        <td>" + rs.getString(110) + "</td>"
                     + "    </tr>");
@@ -1001,7 +1000,7 @@
         if (rs.getString(111).isEmpty() && rs.getString(112).isEmpty() && rs.getString(113).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(111) + "</td>"
+                    + "        <td>" + rs.getString(111) + " ________________________</td>"
                     + "        <td>" + rs.getString(112) + "</td>"
                     + "        <td>" + rs.getString(113) + "</td>"
                     + "    </tr>");
@@ -1010,7 +1009,7 @@
         if (rs.getString(114).isEmpty() && rs.getString(115).isEmpty() && rs.getString(116).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(114) + "</td>"
+                    + "        <td>" + rs.getString(114) + " ________________________</td>"
                     + "        <td>" + rs.getString(115) + "</td>"
                     + "        <td>" + rs.getString(116) + "</td>"
                     + "    </tr>");
@@ -1019,7 +1018,7 @@
         if (rs.getString(117).isEmpty() && rs.getString(118).isEmpty() && rs.getString(119).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(117) + "</td>"
+                    + "        <td>" + rs.getString(117) + " ________________________</td>"
                     + "        <td>" + rs.getString(118) + "</td>"
                     + "        <td>" + rs.getString(119) + "</td>"
                     + "    </tr>");
@@ -1028,7 +1027,7 @@
         if (rs.getString(120).isEmpty() && rs.getString(121).isEmpty() && rs.getString(122).isEmpty()) {
         } else {
             out.print("<tr>"
-                    + "        <td>" + rs.getString(120) + "</td>"
+                    + "        <td>" + rs.getString(120) + " ________________________</td>"
                     + "        <td>" + rs.getString(121) + "</td>"
                     + "        <td>" + rs.getString(122) + "</td>"
                     + "    </tr>");
