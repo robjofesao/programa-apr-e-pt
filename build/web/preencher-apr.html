@@ -13,6 +13,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <style>
         .smc{}
         .sel{}
+        .smec{}
+        .saq{}
+        .sli{}
+        .sop{}
+        .sal{}
+        .sec{}
     </style>
     <script>
     /**
@@ -36,6 +42,49 @@ function marcar_serv_eletricos(checkbox){
        sel.checked = checkbox.checked; 
     });
 }
+//função para os serv mecanicos
+function marcar_serv_mec(checkbox){
+    const marcar = document.querySelectorAll('.smec');
+    marcar.forEach(function (smec){
+       smec.checked = checkbox.checked; 
+    });
+}
+//função para os serv a quente
+function marcar_serv_a_quente(checkbox){
+    const marcar = document.querySelectorAll('.saq');
+    marcar.forEach(function (saq){
+       saq.checked = checkbox.checked; 
+    });
+}
+//função para os serv limpeza
+function marcar_serv_limpeza(checkbox){
+    const marcar = document.querySelectorAll('.sli');
+    marcar.forEach(function (sli){
+       sli.checked = checkbox.checked; 
+    });
+}
+//função para os serv operação
+function marcar_serv_operacao(checkbox){
+    const marcar = document.querySelectorAll('.sop');
+    marcar.forEach(function (sop){
+       sop.checked = checkbox.checked; 
+    });
+}
+//função para os serv altura
+function marcar_serv_altura(checkbox){
+    const marcar = document.querySelectorAll('.sal');
+    marcar.forEach(function (sal){
+       sal.checked = checkbox.checked; 
+    });
+}
+//função para os serv espaço confinado
+function marcar_serv_espaco_confinado(checkbox){
+    const marcar = document.querySelectorAll('.sec');
+    marcar.forEach(function (sec){
+       sec.checked = checkbox.checked; 
+    });
+}
+
     
 </script>
 </head>
@@ -79,31 +128,31 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-servico-mecanicos" name="tipo_serv_mecanicos" value="Serviços mecânicos">
+                    <input class="w3-check" type="checkbox" id="tipo-servico-mecanicos" onclick="marcar_serv_mec(this)" name="tipo_serv_mecanicos" value="Serviços mecânicos">
                     <label>Serviços mecânicos</label>
                 </td>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-servico-a-quente" name="tipo_serv_a_quente" value="Serviço a quente">
+                    <input class="w3-check" type="checkbox" id="tipo-servico-a-quente" onclick="marcar_serv_a_quente(this)" name="tipo_serv_a_quente" value="Serviço a quente">
                     <label>Serviço a quente</label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-servico-limpeza" name="tipo_serv_limpeza" value="Serviço de limpeza">
+                    <input class="w3-check" type="checkbox" id="tipo-servico-limpeza" onclick="marcar_serv_limpeza(this)" name="tipo_serv_limpeza" value="Serviço de limpeza">
                     <label>Serviço de limpeza</label>
                 </td>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-servico-operação" name="tipo_serv_operacao" value="Serviço de operação">
+                    <input class="w3-check" type="checkbox" id="tipo-servico-operação" onclick="marcar_serv_operacao(this)" name="tipo_serv_operacao" value="Serviço de operação">
                     <label>Serviço de operação</label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-servico-altura" name="tipo_serv_altura" value="Serviço em altura">
+                    <input class="w3-check" type="checkbox" id="tipo-servico-altura" onclick="marcar_serv_altura(this)" name="tipo_serv_altura" value="Serviço em altura">
                     <label>Serviço em altura</label>
                 </td>
                 <td>
-                    <input class="w3-check" type="checkbox" id="tipo-servico-espaco-confinado" name="tipo_serv_espaco_conf" value="Serviço em espaço confinado">
+                    <input class="w3-check" type="checkbox" id="tipo-servico-espaco-confinado" onclick="marcar_serv_espaco_confinado(this)" name="tipo_serv_espaco_conf" value="Serviço em espaço confinado">
                     <label>Serviço em espaço confinado</label>
                 </td>
             </tr>
@@ -122,58 +171,58 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- primeira linha da tabela -->
-                <td><input class="w3-check" type="checkbox" id="corte-oxicorte" name="riscos_ava_corte_oxi" value="Corte com oxicorte">
+                <td><input class="w3-check saq" type="checkbox" id="corte-oxicorte" name="riscos_ava_corte_oxi" value="Corte com oxicorte">
                     <label>Corte com oxicorte</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-corte-oxicorte" name="medida_controle_corte_oxicorte" value="Fazer check list e corrigir ou substituir os itens com defeitos ou danificados">
+                <td><input class="w3-check saq" type="checkbox" id="medida-controle-corte-oxicorte" name="medida_controle_corte_oxicorte" value="Fazer check list e corrigir ou substituir os itens com defeitos ou danificados">
                     <label>Fazer check list e corrigir ou substituir os itens com defeitos ou danificados</label>
                 </td>
             </tr>
             <tr>
                 <!-- segunda linha -->
-                <td><input class="w3-check" type="checkbox" id="corpo-estranho-olhos" name="riscos_ava_corpo_estranho" value="Corpo estranho nos olhos">
+                <td><input class="w3-check sli sop sal sec" type="checkbox" id="corpo-estranho-olhos" name="riscos_ava_corpo_estranho" value="Corpo estranho nos olhos">
                     <label>Corpo estranho nos olhos</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-corpo-estranho-olhos" name="medida_controle_corpo_estranho" value="Utilizar os óculos de segurança e EPI's básicos">
+                <td><input class="w3-check sli sop sal sec" type="checkbox" id="medida-controle-corpo-estranho-olhos" name="medida_controle_corpo_estranho" value="Utilizar os óculos de segurança e EPI's básicos">
                     <label>Utilizar os óculos de segurança e EPI's básicos</label>
                 </td>
             </tr>
             <tr>
                 <!-- terceira linha -->
-                <td><input class="w3-check" type="checkbox" id="ruido-intermitente-cont" name="riscos_ava_ruido" value="Ruído intermitente / continuo">
+                <td><input class="w3-check sop sal sec" type="checkbox" id="ruido-intermitente-cont" name="riscos_ava_ruido" value="Ruído intermitente / continuo">
                     <label>Ruído intermitente / continuo</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-ruido-intermit" name="medida_controle_ruido" value="Utilizar o protetor auricular tipo plug / concha / espuma e os EPI's básicos">
+                <td><input class="w3-check sop sal sec" type="checkbox" id="medida-controle-ruido-intermit" name="medida_controle_ruido" value="Utilizar o protetor auricular tipo plug / concha / espuma e os EPI's básicos">
                     <label>Utilizar o protetor auricular tipo plug / concha / espuma e os EPI's básicos</label>
                 </td>
 
             </tr>
             <tr>
                 <!-- quarta linha -->
-                <td><input class="w3-check" type="checkbox" id="corte-perfuracao" name="riscos_ava_perf_maos" value="Corte com perfuração nas mãos">
+                <td><input class="w3-check smec sli sop sal sec" type="checkbox" id="corte-perfuracao" name="riscos_ava_perf_maos" value="Corte com perfuração nas mãos">
                     <label>Corte com perfuração nas mãos</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-corte-perfuracao" name="medida_controle_perf_maos" value="Utilizar luvas de segurança contra agentes mecânicos">
+                <td><input class="w3-check smec sli sop sal sec" type="checkbox" id="medida-controle-corte-perfuracao" name="medida_controle_perf_maos" value="Utilizar luvas de segurança contra agentes mecânicos">
                     <label>Utilizar luvas de segurança contra agentes mecânicos</label>
                 </td>
 
             </tr>
             <tr>
                 <!-- quinta linha -->
-                <td><input class="w3-check" type="checkbox" id="queda-mesmo-nivel" name="riscos_ava_queda_mesmo_niv" value="Queda no mesmo nível / com diferença de nível abaixo de 2Mt">
+                <td><input class="w3-check sli sop sal sec" type="checkbox" id="queda-mesmo-nivel" name="riscos_ava_queda_mesmo_niv" value="Queda no mesmo nível / com diferença de nível abaixo de 2Mt">
                     <label>Queda no mesmo nível / com diferença de nível abaixo de 2Mt</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-queda-mesmo-nivel" name="medida_controle_queda_mesmo_niv" value="Andar com atenção, inspecionar visualmente os locais de trabalho">
+                <td><input class="w3-check sli sop sal sec" type="checkbox" id="medida-controle-queda-mesmo-nivel" name="medida_controle_queda_mesmo_niv" value="Andar com atenção, inspecionar visualmente os locais de trabalho">
                     <label>Andar com atenção, inspecionar visualmente os locais de trabalho</label>
                 </td>
 
             </tr>
             <tr>
                 <!-- sexta linha -->
-                <td><input class="w3-check smc" type="checkbox" id="queda-de-objetos" name="riscos_ava_queda_obj" value="Queda de objetos">
+                <td><input class="w3-check smc sal" type="checkbox" id="queda-de-objetos" name="riscos_ava_queda_obj" value="Queda de objetos">
                     <label>Queda de objetos</label>
                 </td>
-                <td><input class="w3-check smc" type="checkbox" id="medida-controle-queda-objetos" name="medida_controle_queda_obj" value="Andar com atenção em escadarias, pisos inferiores e superiores, utilizar o capacete de segurança">
+                <td><input class="w3-check smc sal" type="checkbox" id="medida-controle-queda-objetos" name="medida_controle_queda_obj" value="Andar com atenção em escadarias, pisos inferiores e superiores, utilizar o capacete de segurança">
                     <label>Andar com atenção em escadarias, pisos inferiores e superiores, utilizar o capacete de segurança</label>
                 </td>
 
@@ -191,10 +240,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- oitava linha -->
-                <td><input class="w3-check" type="checkbox" id="trabalho-altura" name="riscos_ava_trab_altura" value="Trabalho em altura acima de 2Mt">
+                <td><input class="w3-check sal" type="checkbox" id="trabalho-altura" name="riscos_ava_trab_altura" value="Trabalho em altura acima de 2Mt">
                     <label>Trabalho em altura acima de 2Mt</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-trabalho-altura" name="medida_controle_trab_altura" value="Utilizar: cinto de segurança paraquedista/linha de vida ou trava-queda, verificar o ponto de
+                <td><input class="w3-check sal" type="checkbox" id="medida-controle-trabalho-altura" name="medida_controle_trab_altura" value="Utilizar: cinto de segurança paraquedista/linha de vida ou trava-queda, verificar o ponto de
                         fixação dos mosquetões. Realizar: aferição de pressão, abertura de PT.">
                     <label>Utilizar: cinto de segurança paraquedista/linha de vida ou trava-queda, verificar o ponto de
                         fixação dos mosquetões. Realizar: aferição de pressão, abertura de PT. </label>
@@ -203,10 +252,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- nona linha -->
-                <td><input class="w3-check" type="checkbox" id="queimadura" name="riscos_ava_queimadura" value="Queimadura">
+                <td><input class="w3-check saq" type="checkbox" id="queimadura" name="riscos_ava_queimadura" value="Queimadura">
                     <label>Queimadura</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-queimadura" name="medida_controle_queimadura" value="Utilizar luva de raspa/couro, óculos de segurança lente nº 05, avental de couro/raspa, manga
+                <td><input class="w3-check saq" type="checkbox" id="medida-controle-queimadura" name="medida_controle_queimadura" value="Utilizar luva de raspa/couro, óculos de segurança lente nº 05, avental de couro/raspa, manga
                         de couro/raspa, perneira de couro/raspa">
                     <label>Utilizar luva de raspa/couro, óculos de segurança lente nº 05, avental de couro/raspa, manga
                         de couro/raspa, perneira de couro/raspa </label>
@@ -237,10 +286,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- decima segunda linha -->
-                <td><input class="w3-check" type="checkbox" id="espaco-confinado" name="riscos_ava_espaco_conf" value="Trabalho em espaço confinado">
+                <td><input class="w3-check sec" type="checkbox" id="espaco-confinado" name="riscos_ava_espaco_conf" value="Trabalho em espaço confinado">
                     <label>Trabalho em espaço confinado</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-espaco-confinado" name="medida_controle_espaco_conf" value="Verificar concentração dos gases com aparelho medidor, usar ventilação para retirada dos
+                <td><input class="w3-check sec" type="checkbox" id="medida-controle-espaco-confinado" name="medida_controle_espaco_conf" value="Verificar concentração dos gases com aparelho medidor, usar ventilação para retirada dos
                         gases, abrir PET, aferição de pressão">
                     <label>Verificar concentração dos gases com aparelho medidor, usar ventilação para retirada dos
                         gases, abrir PET, aferição de pressão</label>
@@ -259,10 +308,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- decima quarta linha -->
-                <td><input class="w3-check" type="checkbox" id="lesao-mao-pe-queda-objeto" name="riscos_ava_lesao_pe_mao" value="Lesão nas mãos/pés por queda de objeto">
+                <td><input class="w3-check smec sal" type="checkbox" id="lesao-mao-pe-queda-objeto" name="riscos_ava_lesao_pe_mao" value="Lesão nas mãos/pés por queda de objeto">
                     <label>Lesão nas mãos/pés por queda de objeto</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-lesao-mao-pe" name="medida_controle_lesao_pe_mao" value="Respeitar sinalizações, avisos estabelecidos nas áreas">
+                <td><input class="w3-check smec sal" type="checkbox" id="medida-controle-lesao-mao-pe" name="medida_controle_lesao_pe_mao" value="Respeitar sinalizações, avisos estabelecidos nas áreas">
                     <label>Respeitar sinalizações, avisos estabelecidos nas áreas</label>
                 </td>
 
@@ -279,10 +328,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- decima sétima linha -->
-                <td><input class="w3-check" type="checkbox" id="poeira-particulados-fuligem" name="riscos_ava_poeiras_part" value="Poeiras, Particulados, fuligem">
+                <td><input class="w3-check saq sli" type="checkbox" id="poeira-particulados-fuligem" name="riscos_ava_poeiras_part" value="Poeiras, Particulados, fuligem">
                     <label>Poeiras, Particulados, fuligem</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-poeira-particulados-fuligem" name="medida_controle_poeiras_part" value="Utilizar respirador com filtro químico ou mecânico">
+                <td><input class="w3-check saq sli" type="checkbox" id="medida-controle-poeira-particulados-fuligem" name="medida_controle_poeiras_part" value="Utilizar respirador com filtro químico ou mecânico">
                     <label>Utilizar respirador com filtro químico ou mecânico</label>
                 </td>
 
@@ -301,20 +350,20 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- decima nona linha -->
-                <td><input class="w3-check" type="checkbox" id="projecao-incandecente" name="riscos_ava_proj_mat_inca" value="Projeção de material incandescente">
+                <td><input class="w3-check saq" type="checkbox" id="projecao-incandecente" name="riscos_ava_proj_mat_inca" value="Projeção de material incandescente">
                     <label>Projeção de material incandescente</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-projecao-incandescente" name="medida_controle_proj_mat_inca" value="Utilizar anteparos/bloqueios na trajetória de saída da projeção">
+                <td><input class="w3-check saq" type="checkbox" id="medida-controle-projecao-incandescente" name="medida_controle_proj_mat_inca" value="Utilizar anteparos/bloqueios na trajetória de saída da projeção">
                     <label>Utilizar anteparos/bloqueios na trajetória de saída da projeção</label>
                 </td>
 
             </tr>
             <tr>
                 <!-- vigésima linha -->
-                <td><input class="w3-check" type="checkbox" id="lambada-mangueira" name="riscos_ava_lambada_mangueira" value="Lambada por estouro de mangueira">
+                <td><input class="w3-check saq sli" type="checkbox" id="lambada-mangueira" name="riscos_ava_lambada_mangueira" value="Lambada por estouro de mangueira">
                     <label>Lambada por estouro de mangueira</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-lambada-mangueira" name="medida_controle_lambada_mangueira" value="Verificar estado das mangueiras e ou conexões">
+                <td><input class="w3-check saq sli" type="checkbox" id="medida-controle-lambada-mangueira" name="medida_controle_lambada_mangueira" value="Verificar estado das mangueiras e ou conexões">
                     <label>Verificar estado das mangueiras e ou conexões</label>
                 </td>
 
@@ -341,10 +390,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- vigésima terceira linha -->
-                <td><input class="w3-check" type="checkbox" id="mant-limp-equip-mec" name="riscos_ava_mant_limp_squip_mec" value="Manutenção e limpeza de equipamentos mecânicos">
+                <td><input class="w3-check smec sec" type="checkbox" id="mant-limp-equip-mec" name="riscos_ava_mant_limp_squip_mec" value="Manutenção e limpeza de equipamentos mecânicos">
                     <label>Manutenção e limpeza de equipamentos mecânicos</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-mant-limp-equip-mec" name="medida_controle_mant_limp_squip_mec" value="Desenergizar, bloqueio de alimentação, bloqueio individual">
+                <td><input class="w3-check smec sec" type="checkbox" id="medida-controle-mant-limp-equip-mec" name="medida_controle_mant_limp_squip_mec" value="Desenergizar, bloqueio de alimentação, bloqueio individual">
                     <label>Desenergizar, bloqueio de alimentação, bloqueio individual</label>
                 </td>
 
@@ -371,10 +420,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- vigésima sexta linha -->
-                <td><input class="w3-check" type="checkbox" id="desm-mont-equip-acess" name="riscos_ava_desm_mont_estru" value="Desmontagem/montagem de estrutura equipamento/acessório">
+                <td><input class="w3-check smec" type="checkbox" id="desm-mont-equip-acess" name="riscos_ava_desm_mont_estru" value="Desmontagem/montagem de estrutura equipamento/acessório">
                     <label>Desmontagem/montagem de estrutura equipamento/acessório</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-desm-mont-equip-acess" name="medida_controle_desm_mont_estru" value="Desligamento hidráulico, desligamento elétrico, bloqueio (LOTO)">
+                <td><input class="w3-check smec" type="checkbox" id="medida-controle-desm-mont-equip-acess" name="medida_controle_desm_mont_estru" value="Desligamento hidráulico, desligamento elétrico, bloqueio (LOTO)">
                     <label>Desligamento hidráulico, desligamento elétrico, bloqueio (LOTO)</label>
                 </td>
 
@@ -393,10 +442,10 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- vigésima oitava linha -->
-                <td><input class="w3-check" type="checkbox" id="limpeza-lixadeira" name="riscos_ava_limp_lixadeira" value="Limpeza mecânica com lixadeira">
+                <td><input class="w3-check saq" type="checkbox" id="limpeza-lixadeira" name="riscos_ava_limp_lixadeira" value="Limpeza mecânica com lixadeira">
                     <label>Limpeza mecânica com lixadeira</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-limpeza-lixadeira" name="medida_controle_limp_lixadeira" value="Fazer check list, utilizar os EPI's adequados">
+                <td><input class="w3-check saq" type="checkbox" id="medida-controle-limpeza-lixadeira" name="medida_controle_limp_lixadeira" value="Fazer check list, utilizar os EPI's adequados">
                     <label>Fazer check list, utilizar os EPI's adequados</label>
                 </td>
 
@@ -447,20 +496,20 @@ function marcar_serv_eletricos(checkbox){
             </tr>
             <tr>
                 <!-- trigésima terceira linha -->
-                <td><input class="w3-check sel smc" type="checkbox" id="avaliacao-riscos-inicio-atividade" name="riscos_ava_avaliacao_riscos" value="Avaliação de riscos ou inicio de atividade">
+                <td><input class="w3-check sel smc saq sli sal sec" type="checkbox" id="avaliacao-riscos-inicio-atividade" name="riscos_ava_avaliacao_riscos" value="Avaliação de riscos ou inicio de atividade">
                     <label>Avaliação de riscos ou inicio de atividade</label>
                 </td>
-                <td><input class="w3-check sel smc" type="checkbox" id="medida-controle-avaliacao-riscos-inicio-atividade" name="medida_controle_avaliacao_riscos" value="Abrir PT (permissão de Trabalho)">
+                <td><input class="w3-check sel smc saq sli sal sec" type="checkbox" id="medida-controle-avaliacao-riscos-inicio-atividade" name="medida_controle_avaliacao_riscos" value="Abrir PT (permissão de Trabalho)">
                     <label>Abrir PT (permissão de Trabalho)</label>
                 </td>
 
             </tr>
             <tr>
                 <!-- trigésima quarta linha -->
-                <td><input class="w3-check" type="checkbox" id="presenca-animais-insetos-peconhentos" name="riscos_ava_animais_peconhe" value="Presença de animais ou insetos peçonhentos">
+                <td><input class="w3-check sli" type="checkbox" id="presenca-animais-insetos-peconhentos" name="riscos_ava_animais_peconhe" value="Presença de animais ou insetos peçonhentos">
                     <label>Presença de animais ou insetos peçonhentos</label>
                 </td>
-                <td><input class="w3-check" type="checkbox" id="medida-controle-presenca-animais-insetos-peconhentos" name="medida_controle_animais_peconhe" value="Trabalhar com atenção, contatar o setor de meio-ambiente, usar os EPI's adequados">
+                <td><input class="w3-check sli" type="checkbox" id="medida-controle-presenca-animais-insetos-peconhentos" name="medida_controle_animais_peconhe" value="Trabalhar com atenção, contatar o setor de meio-ambiente, usar os EPI's adequados">
                     <label>Trabalhar com atenção, contatar o setor de meio-ambiente, usar os EPI's adequados</label>
                 </td>
 
