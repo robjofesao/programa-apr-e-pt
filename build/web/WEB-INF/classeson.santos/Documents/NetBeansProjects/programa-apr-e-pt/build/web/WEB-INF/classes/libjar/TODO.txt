@@ -2,4 +2,18 @@ atividades para fazer
 
 * criar função para quando selecionar o seriço no preencher APR ele ja marcar os combobox relativos aos riscos da atividade. 
     * Continuar função para os outros tipos de serviço [ok]
-* compactar formulario de impressao de apr para apenas 2 folhas ou 1 folha
+* compactar formulario de impressao de apr para apenas 2 folhas ou 1 folha [ok]
+* colocar na identificação da APR o nome do Executante na tela de visualização para facil localização
+* alteração de APR (modificar o banco para colocar o Log de alteração)
+* Exclusao de APR
+* alteração de PT
+* exclusao de PT
+* Alteração de PET
+* exclusao de PET
+
+* fazer validações de formularios
+    *APR
+    *PT
+    *PET
+
+* remodelar front-ent da aplicação deixar mais bonito
