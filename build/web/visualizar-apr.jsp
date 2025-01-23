@@ -1,4 +1,7 @@
 
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,13 +27,17 @@
                             Class.forName("com.mysql.cj.jdbc.Driver");
                             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parbd", "root",
                                     "");
-                            ps = connection.prepareStatement("SELECT cod_apr, descricao_atividade_apr, data_abertura_apr FROM parbd.Apr_reg; ");
+                            ps = connection.prepareStatement("SELECT * FROM parbd.Apr_reg; ");
                             ResultSet rs = ps.executeQuery();
 
                             while (rs.next()) {
+                            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                            LocalDate data = LocalDate.parse(rs.getString("data_abertura_apr"));
+                             
+
 
                     %>
-                    <option value="<%= rs.getString("cod_apr") %>">APR nº: <%= rs.getString("cod_apr") %> - <%= rs.getString("descricao_atividade_apr") %> </option>
+                    <option value="<%= rs.getString("cod_apr") %>">#: <%= rs.getString("cod_apr") %> - <%= rs.getString("descricao_atividade_apr") %> - <%= formato.format(data)  %> </option>
                     <%
 
                             }
@@ -67,9 +74,11 @@
                             ResultSet rs = ps.executeQuery();
 
                             while (rs.next()) {
+                            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                            LocalDate data = LocalDate.parse(rs.getString("data_abertura_pt"));
 
                     %>
-                    <option value="<%= rs.getString("id") %>">PT nº: <%= rs.getString("id") %> - <%= rs.getString("pt_desc_servico") %> - <% out.print(rs.getString("data_abertura_pt")); %> </option>
+                    <option value="<%= rs.getString("id") %>">#: <%= rs.getString("id") %> - <%= rs.getString("pt_desc_servico") %> - <%= formato.format(data) %> </option>
                     <%
 
                             }
@@ -106,9 +115,11 @@
                             ResultSet rs = ps.executeQuery();
 
                             while (rs.next()) {
+                            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                            LocalDate data = LocalDate.parse(rs.getString("data_abertura"));
 
                     %>
-                    <option value="<%= rs.getString("id") %>">PET nº: <%= rs.getString("id") %> - <%= rs.getString("desc_det_serv") %> - <%= rs.getString("data_abertura") %></option>
+                    <option value="<%= rs.getString("id") %>">#: <%= rs.getString("id") %> - <%= rs.getString("desc_det_serv") %> - <%= formato.format(data) %></option>
                     <%
 
                             }
