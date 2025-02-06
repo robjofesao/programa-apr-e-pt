@@ -9,14 +9,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="w3.css" />
-        <title>Visualizar Documentos</title>
+        <title>Exclusão de Documentos</title>
     </head>
     <body>
         <!-- criar campo para listar as apr no sistema -->
         <div class="w3-container">
-            <form action="imprimir-apr.jsp" method="post" target="_blank">
-                <h4 class="w3-bar w3-blue w3-padding-16 w3-container">Comece escolhendo o número da APR a ser buscada:</h4>
-                <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="apr-buscada">
+            <form action="excluir-apr.jsp" method="get">
+                <h4 class="w3-bar w3-blue w3-padding-16 w3-container">Escolha uma APR para ser excluida</h4>
+                <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="apr-excluir">
                     <%
                         //buscar as Aprs preenchidas
 
@@ -50,16 +50,16 @@
                     %>
                 </select>
 
-                <button class="w3-button w3-round-xlarge w3-margin w3-blue" style="align-items: center">Consultar APR</button>
+                <button class="w3-button w3-round-xlarge w3-margin w3-blue" style="align-items: center">EXCLUIR APR</button>
             </form>
 
         </div>
                 
                 <!-- criar campo para listar as pt no sistema -->
         <div class="w3-container">
-            <form action="imprimir-pt.jsp" method="post" target="_blank">
-                <h4 class="w3-bar w3-green w3-padding-16 w3-container">Comece escolhendo o número da PT a ser buscada:</h4>
-                <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="pt-buscada">
+            <form action="excluir-pt.jsp" method="get">
+                <h4 class="w3-bar w3-green w3-padding-16 w3-container">Escolha uma PT para ser Excluida</h4>
+                <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="pt-excluir">
                     <%
                         //buscar as pt preenchidas
 
@@ -91,7 +91,7 @@
                     %>
                 </select>
 
-                <button class="w3-button w3-round-xlarge w3-margin w3-green" style="align-items: center">Consultar PT</button>
+                <button class="w3-button w3-round-xlarge w3-margin w3-green" style="align-items: center">EXCLUIR PT</button>
             </form>
 
         </div>
@@ -99,9 +99,9 @@
                         <!-- criar campo para listar as pet no sistema -->
         <div class="w3-container">
 
-            <form action="imprimir-pet.jsp" method="post" target="_blank">
-                <h4 class="w3-bar w3-yellow w3-padding-16 w3-container">Comece escolhendo o número da PET a ser buscada:</h4>
-                <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="pet-buscada">
+            <form action="excluir-pet.jsp" method="get">
+                <h4 class="w3-bar w3-yellow w3-padding-16 w3-container">Escolha a PET a ser Excluida</h4>
+                <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="pet-excluir">
                     <%
                         //buscar as pet preenchidas
 
@@ -133,7 +133,7 @@
                     %>
                 </select>
 
-                <button class="w3-button w3-round-xlarge w3-margin w3-yellow" style="align-items: center">Consultar PET</button>
+                <button class="w3-button w3-round-xlarge w3-margin w3-yellow" style="align-items: center">EXLUIR PET</button>
                
             </form>
                

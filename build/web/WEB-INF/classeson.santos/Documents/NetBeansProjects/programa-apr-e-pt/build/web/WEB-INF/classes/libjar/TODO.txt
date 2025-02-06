@@ -7,11 +7,11 @@ atividades para fazer
 * compactar formulario de impressao de PET para apenas 1 ou 2 folhas.
 * colocar na identificação da APR a data na tela de visualização para facil localização [ok]
 * alteração de APR (modificar o banco para colocar o Log de alteração)
-* Exclusao de APR
-* alteração de PT
-* exclusao de PT
+* Exclusao de APR [ok]
+* alteração de PT 
+* exclusao de PT [ok]
 * Alteração de PET
-* exclusao de PET
+* exclusao de PET [ok]
 
 * fazer validações de formularios
     *APR

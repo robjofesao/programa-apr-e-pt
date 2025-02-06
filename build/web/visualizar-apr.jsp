@@ -9,7 +9,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="w3.css" />
-        <title>Visualizar Apr</title>
+        <title>Visualizar Documentos</title>
     </head>
     <body>
         <!-- criar campo para listar as apr no sistema -->
@@ -98,6 +98,7 @@
                 
                         <!-- criar campo para listar as pet no sistema -->
         <div class="w3-container">
+
             <form action="imprimir-pet.jsp" method="post" target="_blank">
                 <h4 class="w3-bar w3-yellow w3-padding-16 w3-container">Comece escolhendo o número da PET a ser buscada:</h4>
                 <select class="w3-select w3-border w3-round-large w3-bar w3-padding-16" name="pet-buscada">
@@ -133,8 +134,13 @@
                 </select>
 
                 <button class="w3-button w3-round-xlarge w3-margin w3-yellow" style="align-items: center">Consultar PET</button>
+               
             </form>
-
+               
+                
+                
+           
+               
         </div>
 
 
