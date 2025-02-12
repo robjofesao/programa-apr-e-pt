@@ -1,21 +1,26 @@
-atividades para fazer 
+======= atividades para fazer ===========
 
-* criar função para quando selecionar o seriço no preencher APR ele ja marcar os combobox relativos aos riscos da atividade. 
-    * Continuar função para os outros tipos de serviço [ok]
-* compactar formulario de impressao de apr para apenas 2 folhas ou 1 folha [ok]
+
 * compactar formulario de impressao de PT para apenas 1 ou 2 folhas.
 * compactar formulario de impressao de PET para apenas 1 ou 2 folhas.
-* colocar na identificação da APR a data na tela de visualização para facil localização [ok]
-* alteração de APR (modificar o banco para colocar o Log de alteração)
-* Exclusao de APR [ok]
-* alteração de PT 
-* exclusao de PT [ok]
-* Alteração de PET
-* exclusao de PET [ok]
-
 * fazer validações de formularios
     *APR
     *PT
     *PET
-
+* remodelar o preencher APR para que fique com o visual mais simples.
 * remodelar front-ent da aplicação deixar mais bonito
+
+
+
+====== atividades feitas ======
+
+* criar função para quando selecionar o seriço no preencher APR ele ja marcar os combobox relativos aos riscos da atividade. 
+    * Continuar função para os outros tipos de serviço [ok]
+* compactar formulario de impressao de apr para apenas 2 folhas ou 1 folha [ok]
+* colocar na identificação da APR a data na tela de visualização para facil localização [ok]
+* alteração de APR (modificar o banco para colocar o Log de alteração) [removido]
+* Exclusao de APR [ok]
+* alteração de PT [removido]
+* exclusao de PT [ok]
+* Alteração de PET [removido]
+* exclusao de PET [ok]
